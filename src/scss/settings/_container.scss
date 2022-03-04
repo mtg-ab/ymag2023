@@ -1,0 +1,68 @@
+//Here you can manage all your container settings
+// Section managing
+.section-sm {
+    padding: 30px 0;
+}
+
+.section-md,
+.section {
+    padding: 90px 0;
+}
+
+.section-lg {
+    padding: 150px 0;
+}
+
+.section-xl {
+    padding: 180px 0;
+}
+
+// Container managing
+.container-fluid {
+    width: 100%;
+    padding: 0;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.container-sm {
+    float: none;
+    max-width: 990px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.container,
+.container-md {
+    float: none;
+    max-width: 1140px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.container-lg {
+    float: none;
+    max-width: 1290px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.container-xl {
+    float: none;
+    max-width: 1450px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.container-custom {
+    float: none;
+    max-width: 1950px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+    overflow: hidden;
+}

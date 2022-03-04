@@ -1,0 +1,72 @@
+.dropdown-qa {
+  .accordion {
+    .card {
+      border: 1px solid $baseFontColor;
+      transition: all 0.3s;
+      &.select {
+        border-color: transparent;
+        background-color: $charcoal;
+        p {
+          color: $white;
+        }
+        .card-header .card-toggle:after {
+          transform: translateY(-50%) rotate(-180deg);
+          background-image: url("data:image/svg+xml,%3Csvg width='9px' height='6px' viewBox='0 0 9 6' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg transform='translate(-444.000000, -6175.000000)'%3E%3Cg transform='translate(165.000000, 6151.000000)'%3E%3Cg transform='translate(178.000000, 15.000000)' filter=''%3E%3Cg transform='translate(101.000000, 6.000000)'%3E%3Cpath d='M6.63474769,1.46103896 C6.99928094,1.46103896 7.29885356,1.73916845 7.33283604,2.09479792 L7.33604639,2.16233766 L7.33604639,6.83766234 C7.33604639,7.22497892 7.02206427,7.53896104 6.63474769,7.53896104 C6.27021444,7.53896104 5.97064181,7.26083155 5.93665933,6.90520208 L5.93344899,6.83766234 L5.93344899,2.86363636 L1.95942301,2.86363636 C1.59488976,2.86363636 1.29531714,2.58550687 1.26133466,2.22987741 L1.25812431,2.16233766 C1.25812431,1.79780441 1.5362538,1.49823179 1.89188327,1.46424931 L1.95942301,1.46103896 L6.63474769,1.46103896 Z' id='Path' fill='%23ffffff' fill-rule='nonzero' transform='translate(4.297085, 4.500000) rotate(134.000000) translate(-4.297085, -4.500000) '%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+      }
+      & + .card {
+        margin-top: 30px;
+      }
+      p {
+        transition: all 0.3s;
+      }
+      .card-header {
+        .card-toggle {
+          cursor: pointer;
+          &::after {
+            content: '';
+            top: 50%;
+            right: 30px;
+            transform: translateY(-50%);
+            width: 10px;
+            height: 6px;
+            position: absolute;
+            transition: all 0.3s;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url("data:image/svg+xml,%3Csvg width='9px' height='6px' viewBox='0 0 9 6' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg transform='translate(-444.000000, -6175.000000)'%3E%3Cg transform='translate(165.000000, 6151.000000)'%3E%3Cg transform='translate(178.000000, 15.000000)' filter=''%3E%3Cg transform='translate(101.000000, 6.000000)'%3E%3Cpath d='M6.63474769,1.46103896 C6.99928094,1.46103896 7.29885356,1.73916845 7.33283604,2.09479792 L7.33604639,2.16233766 L7.33604639,6.83766234 C7.33604639,7.22497892 7.02206427,7.53896104 6.63474769,7.53896104 C6.27021444,7.53896104 5.97064181,7.26083155 5.93665933,6.90520208 L5.93344899,6.83766234 L5.93344899,2.86363636 L1.95942301,2.86363636 C1.59488976,2.86363636 1.29531714,2.58550687 1.26133466,2.22987741 L1.25812431,2.16233766 C1.25812431,1.79780441 1.5362538,1.49823179 1.89188327,1.46424931 L1.95942301,1.46103896 L6.63474769,1.46103896 Z' id='Path' fill='%23000000' fill-rule='nonzero' transform='translate(4.297085, 4.500000) rotate(134.000000) translate(-4.297085, -4.500000) '%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+          }
+        }
+        .collapse {
+          .card-body {
+            p + p {
+              margin-top: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .dropdown-qa {
+    .accordion {
+      .card {
+        .card-header {
+          .card-toggle {
+            padding: 30px 0;
+            .title-wrapper {
+              &:before {
+                display: none;
+              }
+            }
+          }
+        }
+        .card-body {
+          padding: 0px 0px 30px;
+        }
+      }
+    }
+  }
+}

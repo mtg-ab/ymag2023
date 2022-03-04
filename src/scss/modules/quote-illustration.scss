@@ -1,0 +1,39 @@
+.section-quote-illustration {
+  position: relative;
+  overflow: hidden;
+  > svg {
+    
+    top: 50%;
+    left: calc(50% - 455px);
+    transform: translate(-50%,-50%);
+    pointer-events: none;
+  }
+  * {
+    color: $bluedarker;
+  }
+
+  .img-wrapper {
+    min-height: 406px;
+    border-radius: 5px;
+  }
+
+  .quote {
+    * {
+      margin-bottom: 20px;
+      font-size: 30px;
+      line-height: 39px;
+      font-weight: 500;
+    }
+  }
+
+  .author-name {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .author-job {
+    
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

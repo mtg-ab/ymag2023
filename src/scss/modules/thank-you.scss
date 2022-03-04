@@ -1,0 +1,38 @@
+.thank-you{
+    background-color: $home_hero_bg;
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        width: 1071px;
+        height: 754px;
+        z-index: -1;
+        bottom: 53px;
+        left: -200px;
+        background-image: url("data:image/svg+xml,%3Csvg width='1071' height='754' viewBox='0 0 1071 754' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M-542.7 53.5587C-670.247 225.253 -668.485 421.837 -668.485 421.837C-668.485 421.837 -526.355 273.281 -269.74 371.475C-258.301 376.724 563.207 705.981 563.207 705.981C563.207 705.981 777.569 774.603 904.748 605.089C1032.3 433.394 1030.53 236.81 1030.53 236.81C1030.53 236.81 888.403 385.367 631.788 287.173C620.349 281.923 -201.159 -47.3334 -201.159 -47.3334C-201.159 -47.3334 -413.492 -115.807 -542.7 53.5587Z' fill='url(%23paint0_linear)'/%3E%3Cpath d='M780.437 700.854C780.632 700.337 780.372 699.76 779.856 699.565L771.438 696.379C770.922 696.183 770.345 696.443 770.149 696.96C769.954 697.476 770.214 698.054 770.73 698.249L778.212 701.081L775.38 708.563C775.185 709.08 775.445 709.657 775.962 709.852C776.478 710.048 777.055 709.788 777.251 709.271L780.437 700.854ZM371.089 628.912C463.102 670.418 540.02 699.928 606.552 713.374C673.102 726.824 729.33 724.216 779.913 701.412L779.091 699.588C729.004 722.169 673.231 724.81 606.948 711.414C540.646 698.014 463.898 668.582 371.911 627.089L371.089 628.912Z' fill='url(%23paint1_linear)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='813.875' y1='-224.611' x2='358.433' y2='1043.59' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0.385939' stop-color='%232954FF' stop-opacity='0'/%3E%3Cstop offset='0.513636' stop-color='%232954FF' stop-opacity='0.05'/%3E%3Cstop offset='1' stop-color='%232954FF' stop-opacity='0.5'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint1_linear' x1='676.211' y1='678.627' x2='474.211' y2='832.127' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%230BCCA9'/%3E%3Cstop offset='1' stop-color='%230BCCA9' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A");
+    }
+    .wrapper{
+        margin-top: 250px;
+        margin-bottom: 150px;
+        a{
+            text-align: center;
+        }
+    }
+    .label{
+        color: $greyblue !important;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+    .title{
+        color: $greyblue !important;
+        max-width: 920px;
+        text-align: center;
+    }
+    .description{
+        color: $greyblue !important;
+        max-width: 920px;
+        text-align: center;
+    }
+}

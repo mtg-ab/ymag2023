@@ -1,0 +1,48 @@
+.hp-partner-section {
+  .logos-inner {
+    border: 1px solid rgba(0, 5, 26, 0.25);
+    border-radius: 10px;
+    img {
+      max-width: 151px;
+    }
+  }
+
+  .cta-lines {
+    .fill-cta.color-white {
+      svg {
+        transition: all 0.3s;
+        path{
+          fill: #2954FF !important;
+          stroke: #2954FF !important;
+          transition: all .3s;
+        }
+      }
+      &:hover {
+        svg {
+          /* filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(167deg) brightness(103%)
+            contrast(102%); */
+            fill: white !important;
+            stroke: white !important;
+            path{
+              fill: white !important;
+              stroke: white !important;
+            }
+        }
+      }
+    }
+    a {
+      margin-top: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .hp-partner-section {
+    .logos-inner {
+      overflow-x: scroll;
+      img {
+        margin-right: 60px;
+      }
+    }
+  }
+}

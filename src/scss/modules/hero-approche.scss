@@ -1,0 +1,24 @@
+.section-approche {
+    > svg {
+        position: absolute;
+        bottom: -100px;
+        left: calc(50% + 700px);
+        transform: translateX(-50%);
+        pointer-events: none;
+    }
+    .paragraph {
+        font-size: 25px;
+    }
+
+    .title + .paragraph {
+        margin-top: 30px;
+    }
+
+    .paragraph + .paragraph {
+        margin-top: 15px;
+    }
+
+    .paragraph + .title {
+        margin-top: 45px;
+    }
+}

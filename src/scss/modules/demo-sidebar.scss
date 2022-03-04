@@ -1,0 +1,21 @@
+.section-demo-sidebar {
+    transition: 0.3s;
+    .sidebar--container {
+        border-radius: 5px;
+    }
+
+    .label {
+        * { color: #8FA5FF !important; }
+    }
+
+    .title {
+        * {
+            font-weight: bold;
+            font-size: 30px;
+            line-height: 39px;
+            /* Typography/Blue Darker (HSL 5) */
+            color: $white;
+            font-family: "DM Sans", sans-serif;
+        }
+    }
+}

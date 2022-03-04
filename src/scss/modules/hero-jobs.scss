@@ -1,0 +1,85 @@
+.hero-jobs {
+    background-color: $inactive;
+    padding-top: 190px;
+    padding-bottom: 120px;
+    overflow: hidden;
+    position: relative;
+    > svg {
+        position: absolute;
+        pointer-events: none;
+        left: calc(50% + 463px);
+        bottom: 0;
+        transform: translateX(-50%);
+    }
+    h1 {
+        color: white;
+        margin-bottom: 75px;
+    }
+    p {
+        color: white;
+    }
+    .illustration {
+        max-width: 256px;
+        @media screen and (max-width: 991px) {
+            max-width: 256px;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        padding-top: 130px;
+        padding-bottom: 92px;
+    }
+    .details-wrapper {
+        border-top: solid rgba(255, 255, 255, 0.25) 1px;
+        .asset {
+            display: flex;
+            align-items: center;
+            padding-right: 10px;
+        }
+        .icon-wrapper {
+            height: 20px;
+            width: 20px;
+            min-height: 20px;
+            min-width: 20px;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            &.type {
+                background-image: url("https://www.makethegrade.fr/hubfs/svg/onobarding-equipe.svg");
+            }
+            &.lieu {
+                background-image: url("https://www.makethegrade.fr/hubfs/svg/location.svg");
+            }
+            &.niveau {
+                background-image: url("https://www.makethegrade.fr/hubfs/svg/etude.svg");
+            }
+            &.date {
+                background-image: url("https://www.makethegrade.fr/hubfs/svg/reseaux-sociaux.svg");
+            }
+            &.conditions {
+                background-image: url("https://www.makethegrade.fr/hubfs/svg/conditions.svg");
+            }
+            &.xp {
+                background-image: url("https://www.makethegrade.fr/hubfs/svg/valise.svg");
+            }
+            &.salaire {
+                background-image: url("https://www.makethegrade.fr/hubfs/svg/Check-v2.svg");
+            }
+        }
+        .asset-value {
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 150.02%;
+            /* identical to box height, or 24px */
+            color: #ffffff;
+        }
+    }
+    .cta {
+        display: inline-block;
+        cursor: pointer;
+        &.disabled {
+            cursor: inherit;
+            pointer-events: none;
+            opacity: 0.4;
+        }
+    }
+}

@@ -1,0 +1,139 @@
+.hero-section-expertise {
+  padding-top: 101px !important;
+  &.hero-green svg {
+    linearGradient stop {
+      stop-color: $duckgreen;
+    }
+  }
+  &.hero-orange svg {
+    linearGradient stop {
+      stop-color: $poporange;
+    }
+  }
+  &.hero-purple svg {
+    linearGradient stop {
+      stop-color: $purplerain;
+    }
+  }
+  > svg {
+    position: absolute;
+    top: calc(50% - 100px);
+    left: calc(50% - 740px);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+  hr {
+    margin-top: 0;
+    border-top: 1px solid $borderColor;
+    margin-bottom: 2.2rem;
+    margin-top: 0;
+  }
+  .head {
+    .service-name {
+      @media screen and (max-width: 767px) {
+        margin-bottom: 5px;
+      }
+
+      .tag {
+        color: black;
+        font-weight: bold;
+      }
+
+      img {
+        max-width: 32px;
+        @media screen and (max-width: 767px) {
+          width: 30px;
+        }
+      }
+    }
+
+    .cta-lines {
+      display: flex;
+      align-items: center;
+
+      a {
+        text-decoration: none;
+        color: $testimonialColor;
+        font-family: 'DM Sans', sans-serif;
+        font-weight: bold;
+        font-size: 16px;
+        padding: 5px 10px;
+        transition: all 0.3s;
+
+        &:hover {
+          color: white;
+          background-color: $navyblue;
+          border-radius: 5px;
+        }
+      }
+
+      a + a {
+        margin-left: 30px;
+      }
+
+      @media screen and (max-width: 767px) {
+        display: none;
+      }
+    }
+  }
+  .main {
+    .illustration {
+      border: 1px dotted $poporange;
+    }
+    .content {
+      .p-wrapper * {
+        color: $bluedarker;
+      }
+      .service-color-purple {
+        span {
+          color: $purplerain;
+        }
+      }
+      .service-color-orange {
+        span {
+          color: $poporange;
+        }
+      }
+      .service-color-green {
+        span {
+          color: $duckgreen;
+        }
+      }
+
+      svg.shape {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .cta-lines {
+        display: flex;
+        align-items: center;
+        a {
+          display: block;
+          margin: 0px 20px 20px 0px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .hero-section-expertise {
+    svg.shape {
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      height: auto;
+      &:not(.orange) {
+        max-width: 256px;
+      }
+      &.orange {
+        max-width: 200px;
+      }
+    }
+    .expertise-img {
+      max-width: 256px;
+    }
+  }
+}

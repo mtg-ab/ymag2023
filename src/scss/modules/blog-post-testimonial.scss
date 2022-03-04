@@ -1,0 +1,27 @@
+.blog-post-testimonial {
+  background-color: $greyblue;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 550px;
+    height: 418px;
+    bottom: 0;
+    left: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='550' height='418' viewBox='0 0 550 418' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M-25.1372 539.409C222.975 483.4 365.784 287.416 365.784 287.416C365.784 287.416 120.74 307.533 -52.3648 -18.5103C-59.4394 -33.9064 -602.648 -1092.42 -602.648 -1092.42C-602.648 -1092.42 -757.102 -1351.52 -1003.26 -1297.34C-1251.37 -1241.33 -1394.18 -1045.34 -1394.18 -1045.34C-1394.18 -1045.34 -1149.14 -1065.46 -976.033 -739.418C-968.958 -724.022 -425.749 334.487 -425.749 334.487C-425.749 334.487 -273.126 591.633 -25.1372 539.409Z' fill='url(%23paint0_linear)' fill-opacity='0.5'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='-258.945' y1='307.064' x2='-404.803' y2='70.2078' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='white'/%3E%3Cstop offset='0.781753' stop-color='white' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A");
+  }
+  p {
+    z-index: 11;
+  }
+  p:first-child {
+    font-size: 30px;
+    line-height: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $border-decoration;
+  }
+  .author {
+    margin-top: 20px;
+  }
+  .description {
+    margin-top: 5px;
+  }
+}

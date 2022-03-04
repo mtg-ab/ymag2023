@@ -1,0 +1,435 @@
+// Here you can setup your form options
+
+form {
+    padding: 0px;
+}
+
+h3.form-title {
+    display: none;
+}
+
+form.hs-form,
+.submitted-message {
+    background: rgba(white, 1); //set the color here
+    padding: 45px 15px;
+}
+
+.submitted-message{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.submitted-message p {
+    font-size: 14px;
+    line-height: 150.02%;
+    color: #7f818c;
+    text-align: center;
+}
+
+.submitted-message h3{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.submitted-message a {
+    margin-top: 45px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    background-color: $navyblue;
+    color: $white;
+    border: none;
+    border-radius: 5px;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.5;
+    transition: all 0.3s;
+    text-align: center;
+    white-space: normal;
+    vertical-align: middle;
+    text-decoration: none;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid transparent;
+    user-select: none;
+    padding: 15px 20px;
+    &:hover {
+        background-color: transparent;
+        border: solid 1px $navyblue;
+        color: $navyblue;
+    }
+}
+
+form.hs-form fieldset {
+    max-width: none;
+    width: 100%;
+}
+
+form.hs-form fieldset:first-child {
+    margin-top: -25px;
+}
+
+form.hs-form .hs-form-field {
+    margin-top: 25px;
+}
+
+form.hs-form > .hs-form-field:first-child {
+    margin-top: 0;
+}
+
+form.hs-form fieldset.form-columns-2 .field {
+    width: 47.5%;
+}
+
+form.hs-form fieldset.form-columns-2 .field + .field {
+    margin-left: 5%;
+}
+
+form.hs-form fieldset.form-columns-3 .field {
+    width: 30%;
+}
+
+form.hs-form fieldset.form-columns-3 .field + .field {
+    margin-left: 5%;
+}
+
+form.hs-form label {
+    font-size: 16px;
+    margin: 0;
+}
+form.hs-form label span {
+    font-family: "DM Sans", sans-serif;
+    font-weight: bold;
+    color: $labelColor;
+}
+
+.hs-form-checkbox-display span,
+.hs-form-radio-display span {
+    font-weight: 400 !important;
+}
+
+form.hs-form label span + span {
+    margin-left: 2px;
+}
+
+form.hs-form legend {
+    color: grey;
+    display: block !important;
+    font-size: 80%;
+    margin: 0 0 6px 0;
+}
+
+form.hs-form .hs-form-required {
+    color: $navyblue;
+}
+
+form.hs-form .hs-form-field .input {
+    margin: 0 !important;
+}
+
+form.hs-form .hs-form-field input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),
+form.hs-form .hs-form-field select,
+form.hs-form .hs-form-field textarea {
+    width: 100% !important;
+    color: $bluedarker;
+    background: rgba(0, 5, 26, 0.05);
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 5, 26, 0.1);
+    border-radius: 5px;
+    padding: 10px 15px;
+    outline: none;
+    -webkit-transition: 0.3s border, 0.3s box-shadow;
+    -moz-transition: 0.3s border, 0.3s box-shadow;
+    transition: 0.3s border, 0.3s box-shadow;
+}
+form.hs-form .hs-form-field input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),
+form.hs-form .hs-form-field select,
+form.hs-form .hs-form-field textarea::placeholder {
+}
+
+form.hs-form .hs-form-field textarea {
+    height: 160px;
+    margin-bottom: -7px;
+}
+
+form.hs-form .hs-form-field input:not([type="checkbox"]):not([type="radio"]):not([type="file"]):focus,
+form.hs-form .hs-form-field select:focus,
+form.hs-form .hs-form-field textarea:focus {
+    background: #ebecf9;
+    border-color: $navyblue;
+    outline: 0;
+}
+
+form.hs-form .hs-form-field select {
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='8px' height='14px' viewBox='0 0 8 14' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E %3Cg fill='%23000000'%3E %3Cpolygon transform='translate(4.000000, 11.500000) scale(1, -1) translate(-4.000000, -11.500000) ' points='4 9 8 14 0 14'%3E%3C/polygon%3E %3Cpolygon points='4 0 8 5 0 5'%3E%3C/polygon%3E %3C/g%3E %3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px top 50%;
+    background-size: 8px auto;
+    padding-right: 38px;
+}
+
+form.hs-form .hs-form-field select::-ms-expand {
+    display: none;
+}
+
+form.hs-form .hs-form-field select option {
+    font-weight: normal;
+}
+
+form.hs-form .hs-form-field input[type="file"] {
+    width: 100% !important;
+    background: #ffffff;
+    border: 1px dashed rgba($borderColor, 1);
+    border-radius: 0;
+    padding: 10px;
+    cursor: pointer;
+    outline: none;
+}
+
+form.hs-form .hs-form-field input:not([type="checkbox"]):not([type="radio"]):not([type="file"]).error,
+form.hs-form .hs-form-field select.error,
+form.hs-form .hs-form-field textarea.error {
+    background: rgba(0, 5, 26, 0.05);
+    border: 1px solid rgba(242, 79, 79, 0.8);
+    color: #f24f4f;
+}
+
+form.hs-form .hs-form-field input:not([type="checkbox"]):not([type="radio"]):not([type="file"]).error:focus,
+form.hs-form .hs-form-field select.error:focus,
+form.hs-form .hs-form-field textarea.error:focus {
+    outline: 0;
+}
+
+form.hs-form .hs-form-field ul.inputs-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+form.hs-form .hs-form-field ul.multi-container li {
+    margin-top: 8px;
+}
+
+form.hs-form .hs-form-field input[type="checkbox"],
+form.hs-form .hs-form-field input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+}
+
+form.hs-form .hs-form-field input[type="checkbox"] + span,
+form.hs-form .hs-form-field input[type="radio"] + span {
+    font-size: 16px;
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+}
+
+form.hs-form .hs-form-field input[type="checkbox"] + span:before,
+form.hs-form .hs-form-field input[type="radio"] + span:before {
+    content: "";
+    margin-right: 6px;
+    margin-top: 0px;
+    display: inline-block;
+    vertical-align: text-top;
+    width: 20px;
+    height: 20px;
+    background: rgba(0, 5, 26, 0.05);
+    border: 1px solid rgba(0, 5, 26, 0.05);
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+form.hs-form .hs-form-field input[type="radio"] + span:before {
+    border-radius: 100%;
+}
+
+form.hs-form .hs-form-field input[type="checkbox"] + span:hover:before,
+form.hs-form .hs-form-field input[type="radio"] + span:hover:before {
+    border-color: $navyblue;
+}
+
+form.hs-form .hs-form-field input[type="checkbox"]:focus + span:before,
+form.hs-form .hs-form-field input[type="radio"]:focus + span:before {
+    border-color: $navyblue;
+}
+
+form.hs-form .hs-form-field input[type="checkbox"]:checked + span:before,
+form.hs-form .hs-form-field input[type="radio"]:checked + span:before {
+    background: $navyblue;
+    border-color: $navyblue;
+}
+
+form.hs-form .hs-form-field input[type="checkbox"]:checked + span:after,
+form.hs-form .hs-form-field input[type="radio"]:checked + span:after {
+    content: "";
+    position: absolute;
+}
+
+form.hs-form .hs-form-field input[type="checkbox"]:checked + span:after {
+    display: block;
+    left: 6px;
+    top: 6px;
+    width: 7px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.hs-form-booleancheckbox-display .hs-input span:after {
+    left: 7px !important;
+    top: 6px !important;
+    width: 7px !important;
+}
+
+form.hs-form .hs-form-field input[type="radio"]:checked + span:after {
+    display: block;
+    background: #fff;
+    left: 6px;
+    top: 6px;
+    border-radius: 100%;
+    width: 8px;
+    height: 8px;
+}
+
+form.hs-form .hs-form-field input[type="checkbox"]:disabled + span,
+form.hs-form .hs-form-field input[type="radio"]:disabled + span {
+    color: #b8b8b8;
+    cursor: auto;
+}
+
+form.hs-form .hs-form-field input[type="checkbox"]:disabled + span:before,
+form.hs-form .hs-form-field input[type="radio"]:disabled + span:before {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background: #ddd;
+    border-color: rgba($borderColor, 1);
+}
+
+form.hs-form .legal-consent-container .hs-fieldtype-booleancheckbox {
+    margin: 5px 0 20px 0;
+}
+
+form.hs-form .legal-consent-container .hs-form-booleancheckbox-display > span {
+    margin: 0;
+}
+
+form.hs-form .legal-consent-container input[type="checkbox"] + span {
+    font-size: 80%;
+    padding-left: 30px !important;
+}
+
+.legal-consent-container .hs-form-booleancheckbox-display p,
+form.hs-form .legal-consent-container input[type="checkbox"] + span {
+    font-size: 14px;
+    color: #000519;
+    font-weight: 400 !important;
+}
+
+form.hs-form .legal-consent-container input[type="checkbox"] + span:before {
+    margin-top: 0;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+form.hs-form .legal-consent-container input[type="checkbox"] + span:after {
+    margin-top: -2px;
+}
+
+form.hs-form .hs-error-msgs {
+    color: #f24f4f;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+form.hs-form .hs-error-msgs label {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+form.hs-form .hs-richtext {
+    margin-top: 15px;
+}
+
+form.hs-form .legal-consent-container .hs-richtext {
+    font-size: 80%;
+}
+
+form.hs-form .hs_recaptcha,
+form.hs-form .hs-submit {
+    margin-top: 30px;
+    text-align: center;
+}
+
+form.hs-form input {
+    margin: 0;
+}
+
+@media (max-width: 575px) {
+    form.hs-form fieldset.form-columns-2 .field,
+    form.hs-form fieldset.form-columns-3 .field {
+        width: 100%;
+    }
+
+    form.hs-form fieldset.form-columns-2 .field + .field,
+    form.hs-form fieldset.form-columns-3 .field + .field {
+        margin-left: 0;
+    }
+}
+
+.hs-richtext {
+    p,
+    a {
+        font-size: 14px;
+        font-family: "DM Sans", sans-serif;
+        line-height: 1.5;
+        color: $richTextColor;
+    }
+}
+
+.hs-form-booleancheckbox {
+    margin: 20px 0px;
+
+    p {
+        font-family: "DM Sans", sans-serif;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 1.5;
+        color: $bluedarker;
+    }
+}
+
+.hs-input[type="text"] {
+    background: rgba(0, 5, 26, 0.05);
+    border: 1px solid rgba(0, 5, 26, 0.1);
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    color: white;
+    background-color: $navyblue;
+    padding: 20px 30px;
+    box-shadow: 0px 4px 30px rgba(41, 15, 112, 0.1);
+    border-radius: 5px;
+    border: none;
+    font-family: "DM sans", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    transition: all 0.3s;
+    border: solid 2px transparent;
+    &:hover {
+        border: 2px solid $navyblue;
+        background-color: white;
+        color: $navyblue;
+    }
+}

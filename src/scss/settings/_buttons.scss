@@ -1,0 +1,165 @@
+// Here you can setup all the SASS of your buttons.
+.btn {
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  line-height: 1;
+  text-align: center;
+  white-space: normal;
+  vertical-align: middle;
+  padding: 15px 20px;
+  text-decoration: none;
+  user-select: none;
+  transition: 0.3s color, 0.3s background, 0.3s border;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  &.small {
+    padding: 10px 15px;
+  }
+  &.primary {
+    background-color: $black;
+    border-color: $black;
+    color: $white;
+    &:hover {
+      color: $black;
+      background-color: $white;
+    }
+  }
+  &.reverse {
+    border-color: $black;
+    color: $black;
+    &:hover {
+      background-color: $black;
+      color: $white;
+    }
+  }
+  &.white {
+    background-color: $white;
+    color: $baseFontColor;
+    &:hover {
+      border-color: $white;
+      color: $white;
+      background-color: transparent;
+    }
+  }
+  &.blue {
+    background-color: $navyblue;
+    color: $white;
+    border: none;
+    border-radius: 5px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.5;
+    transition: all 0.3s;
+    &:hover {
+      background-color: transparent;
+      border: solid 1px $navyblue;
+      color: $navyblue;
+    }
+  }
+  &.fade-blue {
+    background-color: $navyblue-alpha;
+    color: $navyblue;
+    border: none;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.35;
+    transition: all 0.3s;
+    &:hover {
+      color: $white;
+      background-color: $navyblue;
+    }
+  }
+}
+
+.arrow-cta,
+.fill-cta {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1.2;
+
+  svg {
+    margin-right: 10px;
+  }
+}
+
+.fill-cta {
+  padding: 20px 30px;
+  border-radius: 5px;
+  text-decoration: none;
+  background-color: $navyblue;
+  border: 2px solid $navyblue;
+  color: white;
+  display: block;
+  transition: all 0.3s;
+  &:hover {
+    border: 2px solid $navyblue;
+    background-color: white;
+    color: $navyblue;
+  }
+
+  &.color-white {
+    background-color: white;
+    color: $navyblue;
+    border: 2px solid white;
+
+    &:hover {
+      border: 2px solid $white;
+      background-color: $navyblue;
+      color: $white;
+    }
+    &.white-bg {
+      border: 2px solid $navyblue;
+    }
+  }
+
+  &.black-bg {
+    &:hover {
+      border: 2px solid white;
+      color: $navyblue;
+      background-color: white;
+    }
+  }
+}
+
+.arrow-cta {
+  color: $navyblue;
+  text-decoration: none;
+  position: relative;
+  border-bottom: 2px solid $navyblue;
+  padding-bottom: 5px;
+  padding-right: 10px;
+  transition: all 0.3s;
+  will-change: opacity, padding-right;
+  &:hover {
+    opacity: 0.75;
+    padding-right: 20px;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0px;
+    bottom: -6px;
+    height: 10px;
+    width: 10px;
+    border-top: 2px solid $navyblue;
+    border-right: 2px solid $navyblue;
+    transform: rotate(45deg);
+    transition: all 0.3s;
+  }
+
+  &.color-white {
+    color: white;
+    border-bottom: 2px solid white;
+    &::after {
+      border-top: 2px solid white;
+      border-right: 2px solid white;
+    }
+  }
+}

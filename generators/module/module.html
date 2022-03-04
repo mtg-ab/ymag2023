@@ -1,0 +1,18 @@
+<div id="\{{module.module_identity}}" class="{% if module.content_style.section_type != 'none' %} section-\{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container">
+        {% inline_rich_text field="rich_text" value="\{{ module.content_group.text }}" %}
+        {% if module.content_group.image.src %}
+        <figure class="figure">
+            <img class="img-fluid lazy"
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 \{{ module.content_group.image.width }} \{{ module.content_group.image.height }}'%3E%3C/svg%3E"
+                data-src="\{{ module.content_group.image.src }}" alt="\{{ module.content_group.image.alt }}" />
+        </figure>
+        {% else %}
+        <figure class="figure">
+            <img class="img-fluid lazy"
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 640'%3E%3C/svg%3E"
+                data-src="https://via.placeholder.com/600x600/919388/ffffff.png?text=600x600">
+        </figure>
+        {% endif %}
+    </div>
+</div>

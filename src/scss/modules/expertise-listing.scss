@@ -1,0 +1,172 @@
+.section-exertise-listing {
+  .wrapper-tabs {
+    p.label-subnav {
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.3s;
+      @media screen and (max-width: 767px) {
+        padding: 10px 15px;
+        white-space: nowrap;
+      }
+
+      a {
+        padding: 15px 0px;
+        text-decoration: none;
+        color: #7f818c;
+        display: inline-block;
+        transition: all 0.3s;
+      }
+
+      margin-left: 60px;
+
+      &:first-child {
+        margin-left: 0px;
+      }
+    }
+    p.label-subnav:hover,
+    .active {
+      a {
+        color: $navyblue;
+      }
+      border-bottom: 2px solid $navyblue;
+    }
+  }
+
+  .wrapper-contents {
+    .expertise-content {
+      padding-top: 120px;
+      padding-bottom: 120px;
+      border-top: 1px solid rgba(0, 5, 26, 0.25);
+
+      &:first-child {
+        padding-top: 0px;
+        border-top: none;
+      }
+
+      .head {
+        .left {
+          img {
+            margin-right: 22px;
+            max-width: 45px;
+          }
+        }
+      }
+
+      .main {
+        &.bg-color-green {
+          .service {
+            &:hover {
+              background-color: $duckgreen;
+              border-color: $duckgreen;
+            }
+          }
+        }
+        &.bg-color-orange {
+          .service {
+            &:hover {
+              background-color: $poporange;
+              border-color: $poporange;
+            }
+          }
+        }
+        &.bg-color-purple {
+          .service {
+            &:hover {
+              background-color: $purplerain;
+              border-color: $purplerain;
+            }
+          }
+        }
+
+        .service {
+          border-radius: 5px;
+          border: 1px solid #c4cefa;
+          text-decoration: none;
+          color: black;
+          box-shadow: 0px 4px 30px rgba(41, 15, 112, 0.075);
+          background-color: white;
+          transition: all 0.3s;
+          position: relative;
+          * {
+            color: black;
+          }
+
+          .left {
+            .title {
+              font-size: 26px;
+              line-height: 34px;
+              font-weight: bold;
+              position: relative;
+              transition: all 0.3s;
+              span {
+                transition: all 0.3s;
+              }
+              &:after {
+                content: url("https://go.makethegrade.fr/hubfs/DEV%20-%20MTG%20Website%20-%20Expertise%20page/arrow.svg");
+                position: absolute;
+                left: 0;
+                bottom: -30px;
+                opacity: 0;
+                transition: all 0.3s;
+              }
+            }
+
+            p {
+              font-size: 16px;
+              transition: all 0.3s;
+            }
+          }
+          .illustration {
+            max-width: 115px;
+            opacity: 1;
+            width: 100%;
+            transition: all 0.3s;
+          }
+
+          &:hover {
+            transition: all 0.3s;
+            .title span {
+              color: white;
+            }
+
+            .title {
+              span {
+                transition: all 0.3s;
+              }
+              &:after {
+                opacity: 1;
+                transition-property: opacity;
+                transition: all 0.3s;
+              }
+            }
+
+            p {
+              opacity: 0;
+              transition: all 0.3s;
+              color: $baseFontColor;
+            }
+
+            .illustration {
+              opacity: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .section-exertise-listing {
+    .main .service {
+      flex-direction: column-reverse;
+      .left,
+      .right {
+        width: 100% !important;
+      }
+      .illustration {
+        max-width: 135px;
+      }
+    }
+  }
+}

@@ -1,0 +1,92 @@
+.images-section {
+    img {
+        margin-top: -540px;
+        max-width: 160% !important;
+        transform: translateX(-16%);
+        pointer-events: none;
+    }
+    @media (min-width: 1px) and (max-width: 414px) {
+        img {
+            margin-top: initial
+        }
+        margin-top: -65px;
+    }
+
+    @media (min-width: 415px) and (max-width: 768px) {
+        img {
+            margin-top: -136px;
+        }
+    }
+}
+
+.section-results-dark {
+    background-color: #000519;
+    overflow: hidden;
+    @media (min-width: 1px) and (max-width: 414px) {
+        padding-top: 120px;
+    }
+
+    .padding--custom-b {
+        padding-bottom: 300px;
+        @media (min-width: 1px) and (max-width: 414px) {
+            padding-bottom: 150px;
+        }
+    }
+
+    .paragraph {
+        @media (min-width: 1px) and (max-width: 414px) {
+            padding-bottom: 45px;
+        }
+    }
+    svg {
+        position: absolute;
+        top: 0;
+        left: -20%;
+    }
+    .title + .paragraph{
+        color: $white;
+        margin-top: 15px;
+    }
+
+    .title {
+        * {
+            color: $white;
+        }
+    }
+
+    .result{
+        .left{
+            font-size: 60px;
+            line-height: 67px;
+            font-family: 'Philosopher', sans-serif;
+            font-weight: bold;
+            text-align: right;
+            @media (min-width: 1px) and (max-width: 414px) {
+                padding-bottom: 20px;
+            }
+        }
+
+        .right{
+            max-width: 380px;
+            border-left: 1px solid rgba(255, 255, 255, 0.25);
+            padding-left: 30px;
+            font-size: 20px;
+            line-height: 26px;
+            font-weight: 500;
+            color: $white;
+            @media (min-width: 1px) and (max-width: 414px) {
+                border-left: inherit;
+                padding-left: 0;
+                padding-top: 20px;
+                border-top: 1px solid rgba(255, 255, 255, 0.25);
+            }
+        }
+    }
+
+    .result + .result{
+        margin-top: 80px;
+        @media (min-width: 1px) and (max-width: 414px) {
+            margin-top: 35px;
+        }
+    }
+}

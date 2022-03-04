@@ -1,0 +1,64 @@
+.section-contributors {
+    @media (min-width: 1px) and (max-width: 414px) {
+        padding: 90px 0;
+    }
+    .title {
+        * {
+            font-size: 60px;
+            color: $black;
+            font-family: "Philosopher", sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 67px;
+            @media (min-width: 1px) and (max-width: 414px) {
+                font-size: 40px;
+                line-height: 44px;
+            }
+        }
+    }
+
+    .members--list {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        @media (min-width: 1px) and (max-width: 768px) {
+            flex-wrap: nowrap;
+            overflow-x: scroll;
+        }
+        li {
+            margin-right: 70px;
+            max-width: 120px;
+
+            .member-name {
+                padding-top: 15px;
+                * {
+                    font-weight: bold;
+                    font-size:  16px;
+                    display: block;
+                    line-height: initial;
+                }
+            }
+
+            .member-position {
+                * {
+                    font-size:  16px;
+                    display: block;
+                    line-height: initial;
+                }
+            }
+        }
+        .avatar--container {
+            height: 120px;
+            width: 120px;
+            overflow: hidden;
+            border-radius: 5px;
+            img {
+                object-fit: cover;
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+.sidebar-newsletter {
+  background-color: $white;
+  box-shadow: 0px 4px 30px rgba(41, 15, 112, 0.075);
+  border: 1px solid $border-blue-interaction;
+  .title {
+    max-width: 150px;
+    * {
+      font-size: 30px;
+      line-height: 40px;
+      font-weight: 700;
+    }
+  }
+  form {
+    padding: 0;
+    .hs-email {
+      label {
+        display: none;
+      }
+    }
+    .actions input {
+      width: 100%;
+    }
+    .hs-form-booleancheckbox {
+      margin: 30px 0 15px 0;
+    }
+    .submitted-message {
+      font-size: 20px;
+      padding: 30px;
+      background-color: $greyblue;
+      border-radius: 5px;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+.section-testimonial {
+  background-color: $greyblue;
+  overflow: hidden;
+  > svg {
+    position: absolute;
+    bottom: 0;
+    left: calc(50% + 700px);
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+  hr {
+    border-top: 1px solid #bebfc4;
+  }
+
+  .who {
+    color: $bluedarker;
+
+    .wrapper-img {
+      position: relative;
+      width: 65px;
+      height: 65px;
+      border-radius: 5px;
+      overflow: hidden;
+      min-height: 65px;
+      min-width: 65px;
+      box-shadow: 0px 10px 40px 0px #00000033;
+
+      @media screen and (max-width: 767px) {
+        min-height: 82px;
+        min-width: 82px;
+        width: 82px;
+        height: 82px;
+      }
+    }
+
+    .right {
+      width: 100%;
+
+      .jobtitle {
+        font-size: 16px;
+      }
+
+      .customer-logo {
+        max-width: 128px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .section-testimonial {
+    p.h4 {
+      font-size: 24px;
+    }
+
+    h4  {
+      line-height: 32px;
+      * {
+        font-size: 25px;
+        line-height: 32px;
+      }
+    }
+  }
+}

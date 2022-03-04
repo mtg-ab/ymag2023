@@ -1,0 +1,142 @@
+.section-services {
+  background-color: $bluedarker;
+  overflow-x: hidden;
+  position: relative;
+  padding: 180px 0;
+  &.orange {
+    .service .top::after {
+      background-color: $poporange;
+    }
+  }
+  &.green {
+    .service .top::after {
+      background-color: $duckgreen;
+    }
+  }
+  &.purple {
+    .service .top::after {
+      background-color: $purplerain;
+    }
+  }
+  svg.shape {
+    position: absolute;
+    bottom: 0;
+    left: calc(50% + 30px);
+    transform: translateX(-50%);
+    stop {
+      transition: all 0.3s;
+    }
+    &#orange {
+      stop {
+        stop-color: $poporange;
+      }
+    }
+    &#green {
+      stop {
+        stop-color: $duckgreen;
+      }
+    }
+    &#purple {
+      stop {
+        stop-color: $purplerain;
+      }
+    }
+  }
+  img:not(.initial) {
+    transition-property: opacity;
+    transition-duration: 0.3s;
+  }
+
+  .service {
+    display: block;
+    text-decoration: none;
+    animation: 0s;
+
+    .top {
+      position: relative;
+      overflow: hidden;
+      min-height: 255px;
+      background-color: white;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        bottom: 0px;
+        opacity: 1;
+        z-index: 0;
+        pointer-events: none;
+        transition: all 0.3s;
+        background: linear-gradient(157.06deg, rgba(0, 0, 0, 0) 50.03%, rgba(0, 0, 0, 0.5) 116.95%), #ffffff;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        bottom: 0px;
+        opacity: 0;
+        z-index: 111;
+        pointer-events: none;
+        transition: all 0.25s 0.75s;
+      }
+    }
+    .bottom {
+      p {
+        font-size: 16px;
+      }
+      color: rgba(255, 255, 255, 0.4);
+      transition: all 0.3s;
+
+      .label {
+        font-size: 26px;
+        font-weight: bold;
+        opacity: 1;
+        z-index: 1111;
+        transition: all 0.3s;
+        &:after {
+          content: "";
+          bottom: 30px;
+          left: 30px;
+          width: 29px;
+          height: 15px;
+          position: absolute;
+          opacity: 0;
+          background-image: url("data:image/svg+xml,%3Csvg width='29' height='15' viewBox='0 0 29 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M22.3431 0.292893L28.7071 6.65685C29.0976 7.04738 29.0976 7.68054 28.7071 8.07107L22.3431 14.435C21.9526 14.8256 21.3195 14.8256 20.9289 14.435C20.5384 14.0445 20.5384 13.4113 20.9289 13.0208L25.5858 8.36396H0V6.36396H25.5858L20.9289 1.70711C20.5384 1.31658 20.5384 0.683418 20.9289 0.292893C21.3195 -0.0976311 21.9526 -0.0976311 22.3431 0.292893Z' fill='white'/%3E%3C/svg%3E%0A");
+          transition: all 0.25s 0.25s;
+        }
+      }
+    }
+
+    .illustration {
+      max-width: calc(100% - 100px);
+      max-height: 160px;
+      transition: all 0.3s;
+      z-index: 11;
+    }
+
+    &:hover {
+      .top {
+        .illustration {
+          transform: scale(0.9);
+        }
+
+        &:after {
+          opacity: 0;
+          transition: all 0.25s;
+        }
+      }
+
+      .bottom {
+        color: rgba($color: $white, $alpha: 1);
+      }
+    }
+  }
+}

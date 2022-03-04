@@ -1,0 +1,83 @@
+.dropdown-qa {
+  .container {
+    position: relative;
+  }
+
+  .dropdown-container {
+    background-color: transparent;
+    overflow: hidden;
+    transition: all 0.3s;
+    border-top: 2px solid rgba(0, 5, 26, 0.05);
+
+    &:last-of-type {
+      border-bottom: 2px solid rgba(0, 5, 26, 0.05);
+    }
+
+    header {
+      cursor: pointer;
+      padding: 30px 105px 30px 30px;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 9px;
+        height: 15px;
+        top: 50%;
+        right: 40px;
+        transform: translateY(-50%) rotate(90deg);
+        z-index: 111;
+        background-image: url("data:image/svg+xml,%3Csvg width='9' height='15' viewBox='0 0 9 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 7.50043L1.68906 0L0.00956981 1.72302L5.48862 7.50023L0 13.2785L1.68989 15L9 7.50043Z' fill='%23102747'/%3E%3C/svg%3E%0A");
+        transition: all 0.3s;
+      }
+      p {
+        font-weight: bold;
+        color: $bluedarker;
+      }
+    }
+
+    article {
+      max-height: 0px;
+      overflow: hidden;
+      transition: max-height 350ms ease-in-out;
+      .article-inner {
+        padding: 0px 105px 30px 30px;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: normal;
+        color: #000519;
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+
+    &.open {
+      background-color: transparent;
+
+      header {
+        p {
+          color: $navyblue;
+        }
+
+        &:after {
+          transform: translateY(-50%) rotate(-90deg);
+          background-image: url("data:image/svg+xml,%3Csvg width='9' height='15' viewBox='0 0 9 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 7.50043L1.68906 0L0.00956981 1.72302L5.48862 7.50023L0 13.2785L1.68989 15L9 7.50043Z' fill='%232954ff'/%3E%3C/svg%3E%0A");
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .dropdown-qa {
+    .dropdown-container {
+      header {
+        padding: 30px 90px 30px 30px;
+      }
+      article .article-inner {
+        padding: 0 30px 30px;
+      }
+    }
+  }
+}

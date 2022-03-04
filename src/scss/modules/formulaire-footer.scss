@@ -1,0 +1,170 @@
+.section-formulaire-footer {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    height: 50%;
+    background-color: $bluedarker;
+    z-index: -2;
+    pointer-events: none;
+  }
+
+  .container {
+    .text-inner {
+      > svg {
+        position: absolute;
+        z-index: 11;
+        &.video-shape {
+          left: -225px;
+          top: 95px;
+        }
+        &.form-shape {
+          left: -135px;
+          top: 200px;
+          max-width: 100%;
+        }
+      }
+
+      position: relative;
+
+      h2 {
+        color: white;
+      }
+
+      p {
+        color: white;
+      }
+
+      p.label {
+        color: white;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        width: 999em;
+        top: 0px;
+        left: -999em;
+        bottom: 0px;
+      }
+      &.videoAsk {
+        padding: 190px 0;
+        &:after {
+          width: 165%;
+        }
+        svg {
+          pointer-events: none;
+        }
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        width: 190%;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 60%;
+        z-index: -1;
+        pointer-events: none;
+      }
+
+      .shape-inner {
+        position: absolute;
+        bottom: -380px;
+        left: 0px;
+      }
+    }
+
+    .video-ask-inner {
+      width: 100%;
+      border-radius: 5px;
+      height: auto;
+      background: transparent;
+      box-shadow: 0px 4px 30px rgba(41, 15, 112, 0.1);
+      border-radius: 24px;
+
+      &.form {
+        padding: 30px;
+        background: white;
+        border-radius: 8px;
+        form.hs-form {
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  &.service-color-green {
+    .text-inner {
+      &:before,
+      &:after {
+        background-color: $duckgreen;
+      }
+    }
+    p.label {
+      opacity: 0.75;
+    }
+  }
+  &.service-color-orange {
+    .text-inner {
+      &:before,
+      &:after {
+        background-color: $poporange;
+      }
+    }
+    p.label {
+      opacity: 0.75;
+    }
+  }
+  &.service-color-purple {
+    .text-inner {
+      &:before,
+      &:after {
+        background-color: $purplerain;
+      }
+    }
+    p.label {
+      opacity: 0.75;
+    }
+  }
+  &.service-color-blue {
+    .text-inner {
+      &:before,
+      &:after {
+        background-color: $navyblue;
+      }
+      p.label {
+        opacity: 0.75;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .section-formulaire-footer {
+    &:after {
+      height: calc(100% - 10px);
+    }
+    .container .text-inner {
+      &.videoAsk {
+        padding-top: 90px;
+        > svg {
+          top: 35px;
+        }
+      }
+      padding-bottom: 390px !important;
+      &:after {
+        width: calc(100% + 15px) !important;
+        border-bottom-right-radius: 200px !important;
+      }
+    }
+    .wrap {
+      margin-top: -335px;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.section-about-hero {
+  padding-top: 150px !important;
+  padding-bottom: 90px !important;
+  svg {
+    pointer-events: none;
+    left: calc(50% + 975px);
+    bottom: 200px;
+    transform: translateX(-50%);
+  }
+  .text {
+    * {
+      font-size: 25px;
+    }
+  }
+
+  .cta-line {
+    display: flex;
+    align-items: center;
+
+    a {
+      display: block;
+    }
+  }
+
+  .text + .text {
+    margin-top: 15px;
+  }
+
+  .title + .text {
+    margin-top: 30px;
+  }
+
+  .text + .cta-line {
+    margin-top: 30px;
+  }
+
+  .img-wrapper {
+    //background-color: cornflowerblue;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,25 @@
+.section-hero-expertise-listing {
+  overflow: hidden;
+  > svg {
+    position: absolute;
+    bottom: -100px;
+    left: calc(50% + 700px);
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+  .title {
+    text-align: center;
+    padding-top: 190px;
+    @media screen and (max-width: 767px) {
+      padding-top: 135px;
+    }
+    position: relative;
+
+    @media screen and (min-width: 1200px) {
+      * {
+        font-size: 90px;
+        line-height: 101px;
+      }
+    }
+  }
+}
