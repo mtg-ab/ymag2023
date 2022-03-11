@@ -1,0 +1,24 @@
+.btn {
+    font-family: $font1;
+    color: $color2;
+    background-color: $color1;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
+    white-space: normal;
+    vertical-align: middle;
+    padding: 20px 30px;
+    text-decoration: none;
+    user-select: none;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s;
+    &:hover {
+        background-color: $color2;
+        color: $color1;
+    }
+}
