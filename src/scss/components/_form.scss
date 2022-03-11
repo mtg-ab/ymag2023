@@ -1,5 +1,247 @@
 // Here you can setup your form options
 
+// Here you can setup your form options
+h3.form-title {
+    display: none;
+}
+
+form.hs-form{
+    padding:0px;
+    fieldset{
+        width:100%;
+        max-width:100%;
+        div.hs-richtext {
+            margin: 30px 0px;
+        }
+        div.hs-checkboxes{
+            div.input{
+                ul{
+                    margin:0px;
+                    padding:0px;
+                    list-style-type: none;
+                    li{
+                        margin-top:8px;
+                        label{
+                            input[type="checkbox"],input[type="radio"] {
+                                position: absolute;
+                                opacity: 0;
+                            }
+                            input[type="checkbox"]{
+                                + span:after {
+                                    display: block;
+                                    left: 6px;
+                                    top: 6px;
+                                    width: 5px;
+                                    height: 9px;
+                                    border: solid #fff;
+                                    border-width: 0 2px 2px 0;
+                                    transform: rotate(45deg);
+                                }
+                                &:checked + span:before {
+                                    background: rgba($charcoal , 1);
+                                    border-color: rgba($charcoal , 1);
+                                }
+                            }                            
+                            span {
+                                font-size: 16px;
+                                position: relative;
+                                cursor: pointer;
+                                padding: 0;
+                                &::before {
+                                    content: '';
+                                    margin-right: 6px;
+                                    margin-top: 3px;
+                                    display: inline-block;
+                                    vertical-align: text-top;
+                                    width: 17px;
+                                    height: 17px;
+                                    background: #ffffff;
+                                    border: 1px solid rgba($borderColor , 1);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        form.hs-form .hs-form-field input[type="file"] {
+            width: 100% !important;
+            background: #ffffff;
+            border: 1px dashed rgba($borderColor , 1);
+            border-radius: 0;
+            padding: 10px;
+            cursor: pointer;
+            outline: none;
+        }
+        div.field{
+            margin-bottom:25px;
+            label{
+                font-size: 16px;
+                margin: 0;
+                span+span{
+                    color: rgba($burnt-sienna , 1);
+                    margin-left: 2px;
+                }
+            }
+            legend {
+                color: grey;
+                display: block !important;
+                font-size: 80%;
+                margin: 0 0 6px 0;
+            }
+            div.input{
+                input:not([type=checkbox]):not([type=radio]):not([type=file]),select,textarea{
+                    width: 100% !important;
+                    color: rgba(#ccc , 1);
+                    background: #ffffff;
+                    border: 1px solid rgba(#ccc , 0.73);
+                    border-radius: 0;
+                    padding: 10px 15px;
+                    outline: none;
+                    -webkit-transition: .3s border, .3s box-shadow;
+                    -moz-transition: .3s border, .3s box-shadow;
+                    transition: .3s border, .3s box-shadow;
+                    margin:0px;
+                }
+                textarea{
+                    height:180px;
+                }
+                select {
+                    -webkit-appearance: none;
+                    appearance: none;
+                    background-image:url("data:image/svg+xml,%3Csvg width='8px' height='14px' viewBox='0 0 8 14' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E %3Cg fill='%23000000'%3E %3Cpolygon transform='translate(4.000000, 11.500000) scale(1, -1) translate(-4.000000, -11.500000) ' points='4 9 8 14 0 14'%3E%3C/polygon%3E %3Cpolygon points='4 0 8 5 0 5'%3E%3C/polygon%3E %3C/g%3E %3C/svg%3E");
+                    background-repeat: no-repeat;
+                    background-position: right 15px top 50%;
+                    background-size: 8px auto;
+                    padding-right: 38px;
+                    &::-ms-expand {
+                        display: none;
+                    }
+                    option {
+                        font-weight: normal;
+                    }
+                }
+            } 
+        }
+        &.form-columns-2{
+            display:flex;
+            justify-content: space-between;
+            @media(max-width:700px){
+                flex-direction:column;
+            }
+            div.field{
+                width:calc(100% / 2 - 20px);
+                @media(max-width:700px){
+                    width:100%;
+                }
+            }
+        }
+        &.form-columns-3{
+            display:flex;
+            justify-content: space-between;
+            @media(max-width:700px){
+                flex-direction:column;
+            }
+            div.field{
+                width:calc(100% / 3 - 20px);
+                @media(max-width:700px){
+                    width:100%;
+                }
+            }
+        }
+        ul.hs-error-msgs {
+            color: rgba($burnt-sienna , 1);
+            margin:5px 0px 0px 0px;
+            list-style-type: none;
+            padding:0px;
+            li{
+                label{
+                    &.hs-main-font-element{
+                        background-color: rgba($burnt-sienna , 1);
+                        padding:20px 40px;
+                        text-align: center;
+                        color:#fff;
+                        list-style: none;
+                        margin: 0;
+                        padding: 0;
+                    }
+                }
+            }
+            
+        }
+    }
+    div.hs_error_rollup{
+        background-color: rgba($burnt-sienna , 1);
+        color:#fff;
+        text-align: center;
+        padding:30px;
+        ul{
+            margin:0px;
+            padding:0px;
+            list-style-type: none;
+            li{
+                label{
+                    margin:0px;
+                }
+            }
+        }
+    }
+    div.hs_submit{
+        input[type="submit"]{
+            appearance: none;
+            -moz-appearance: none;
+            border:none;
+            background-color: $text-color;
+            color:#fff;
+            height:50px;
+            padding:0px 30px;
+            border:1px solid $text-color;
+            transition: 0.5s;
+            -webkit-transition: 0.5s;
+            &:hover{
+                background-color: #fff;
+                color:$text-color;
+            }
+        }
+    }
+}
+
+form.hs-form .hs-form-field input[type="checkbox"]:checked + span:after,
+form.hs-form .hs-form-field input[type="radio"]:checked + span:after {
+    content: '';
+    position: absolute;
+}
+
+
+form.hs-form .hs-form-field input[type="checkbox"]:disabled + span,
+form.hs-form .hs-form-field input[type="radio"]:disabled + span {
+    color: #b8b8b8;
+    cursor: auto;
+}
+
+form.hs-form .hs-form-field input[type="checkbox"]:disabled + span:before,
+form.hs-form .hs-form-field input[type="radio"]:disabled + span:before {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background: #ddd;
+    border-color: rgba($borderColor , 1);
+}
+
+form.hs-form .legal-consent-container .hs-fieldtype-booleancheckbox {
+    margin: 5px 0 20px 0;
+}
+
+form.hs-form .legal-consent-container .hs-form-booleancheckbox-display > span {
+    margin: 0;
+}
+
+
+
+
+
+
+
+/*
 form {
     padding: 0px;
 }
