@@ -1,51 +1,47 @@
-.blog-pagination {
-    .next,
-    .previous {
+.container-blog-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .blog-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 5px;
+      text-decoration: none;
+      color: #fff;
+      background-color: $color1;
       height: 50px;
       width: 50px;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 20px;
-      background-image: url("data:image/svg+xml,%3Csvg width='15' height='12' viewBox='0 0 15 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M7.92432 1.09539C8.17283 0.856224 8.57575 0.856224 8.82426 1.09539L13.9152 5.99455C14.1637 6.2337 14.1637 6.62144 13.9152 6.8606L8.82426 11.7598C8.57575 11.9989 8.17283 11.9989 7.92432 11.7598C7.67579 11.5206 7.67579 11.1328 7.92432 10.8936L11.9289 7.03997H0.737926C0.386475 7.03997 0.101562 6.76579 0.101562 6.42757C0.101562 6.08936 0.386475 5.81518 0.737926 5.81518H11.9289L7.92432 1.96144C7.67579 1.72229 7.67579 1.33454 7.92432 1.09539Z' fill='black'/%3E%3C/svg%3E%0A");
-      transition: all 0.3s ease;
       opacity: 0.5;
-      filter: invert(1);
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      &--active,
       &:hover {
         opacity: 1;
       }
     }
-    .next {
+  }
+  .arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+    height: 50px;
+    width: 50px;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+    &:hover {
+      opacity: 1;
+    }
+    &.next {
       transform: rotate(0);
     }
-    .previous {
+    &.previous {
       transform: rotate(-180deg);
     }
-    .container-pagination-link {
-      a {
-        height: 50px;
-        width: 50px;
-        color: white;
-        transition: all 0.3s ease;
-        opacity: 0.5;
-        + a {
-          margin-left: 5px;
-        }
-        &:hover {
-          color: $white;
-          opacity: 1;
-          background: #2954ff;
-          box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.2);
-          border-radius: 4px;
-          padding: 10px 15px;
-        }
-        &.blog-pagination__link--active {
-          color: $white;
-          opacity: 1;
-          background: #2954ff;
-          box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.2);
-          border-radius: 4px;
-          padding: 10px 15px;
-        }
-      }
-    }
   }
+}
