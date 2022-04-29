@@ -78,15 +78,8 @@
     "webpack-cli": "^3.3.6"
   },
   "dependencies": {
-    "bootstrap": "^4.4.1",
     "flickity": "^2.2.1",
-    "flickity-fullscreen": "^1.1.1",
     "flickity-imagesloaded": "^2.0.0",
-    "infinite-scroll": "^3.0.6",
-    "isotope-layout": "^3.0.6",
-    "n": "^8.0.2",
-    "popper.js": "^1.16.1",
-    "sticky-js": "^1.2.2",
-    "vanilla-lazyload": "^14.0.0"
+    "n": "^8.0.2"
   }
 }

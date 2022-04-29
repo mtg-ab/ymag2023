@@ -1,3 +1,18 @@
+section.error-page{
+    margin-top: 250px;
+    margin-bottom: 250px;
+    div.container{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h1{
+            color:$color1;
+            font-size:60px;
+            text-align: center;
+        }
+    }
+}
 /* .content-wrapper-system {
     background-color: $home_hero_bg;
     overflow: hidden;
