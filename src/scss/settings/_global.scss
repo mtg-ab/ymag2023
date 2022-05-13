@@ -24,6 +24,11 @@ body {
   line-height: 1.5;
 }
 
+div.container{
+  max-width:$size1;
+  margin:0 auto;
+}
+
 // TITLES
 h1,
 .h1,
