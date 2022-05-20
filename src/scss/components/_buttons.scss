@@ -1,24 +1,24 @@
 .btn {
     font-family: $font1;
-    color: $color2;
+    color: white;
     background-color: $color1;
     cursor: pointer;
     position: relative;
     display: inline-block;
-    font-size: 20px;
+    font-size: 14px;
+    line-height: 1.25;
     font-weight: 600;
-    line-height: 1.2;
     text-align: center;
     white-space: normal;
     vertical-align: middle;
-    padding: 20px 30px;
+    padding: 14px 20px;
     text-decoration: none;
     user-select: none;
-    border-radius: 8px;
+    border-radius: 5px;
     overflow: hidden;
-    transition: all 0.3s;
+    transition: all 0.5s;
+
     &:hover {
         background-color: $color2;
-        color: $color1;
     }
 }
