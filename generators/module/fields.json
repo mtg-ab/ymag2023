@@ -67,36 +67,29 @@
         ]
     },
     {
-        "type": "group",
-        "name": "content_group",
-        "label": "Content Group",
-        "children": [
-            {
-                "name": "text",
-                "label": "Text",
-                "required": false,
-                "locked": false,
-                "validation_regex": "",
-                "allow_new_line": false,
-                "show_emoji_picker": false,
-                "type": "richtext",
-                "help_text" : "Title can describe your content properly.",
-                "default": "<h1>Example of title used in your module, it is a rich text<h1><p>Here is the paragraph you can custom aswell :) </p>"
-            },
-            {
-                "name": "image",
-                "label": "Image",
-                "required": false,
-                "locked": false,
-                "responsive": true,
-                "resizable": true,
-                "type": "image",
-                "default": {
-                  "size_type": "auto",
-                  "src": "https://via.placeholder.com/600",
-                  "alt": "Example of an image used in your module"
-                }
-              }
-        ]
+        "name": "text",
+        "label": "Text",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "richtext",
+        "help_text": "Title can describe your content properly.",
+        "default": "<h1>Example of title used in your module, it is a rich text<h1><p>Here is the paragraph you can custom aswell :) </p>"
+    },
+    {
+        "name": "image",
+        "label": "Image",
+        "required": false,
+        "locked": false,
+        "responsive": true,
+        "resizable": true,
+        "type": "image",
+        "default": {
+            "size_type": "auto",
+            "src": "https://via.placeholder.com/600",
+            "alt": "Example of an image used in your module"
+        }
     }
 ]

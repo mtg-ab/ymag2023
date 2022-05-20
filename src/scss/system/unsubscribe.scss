@@ -1,57 +1,41 @@
-section.unsubscribe{
-    padding:250px 0px;
+section.unsubscribe {
+    padding: 250px 0px;
     position: relative;
-    div#contain-canvas{
-        position: absolute;
-        width:100%;
-        height:100%;
-        top:0px;
-        left:0px;
-        @media(max-width:$size4){
-            height:100%;
-        }
-    }
-    div.container{
+    text-align: center;
+
+    div.container {
         position: relative;
-        z-index:2;
-        h1{
-            line-height:95px;
+        z-index: 2;
+
+        h1 {
+            color: $color1;
         }
-        a.btn{
-            margin-top:30px;
+
+        a.btn {
+            margin-top: 30px;
         }
-        form{
-            display:flex;
-            flex-direction:column;
-            max-width:800px;
-            div.item,div.subscribe-options{
-                margin-top:20px;
+
+        form {
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            width: 800px;
+            max-width: 100%;
+
+            div.item,
+            div.subscribe-options {
+                margin-top: 20px;
             }
-            input[type="email"]{
-                appearance:none;
-                margin:0px 5px 0px 0px;
-                border:none;
-                border:1px solid $color1;
+
+            input[type="email"] {
+                appearance: none;
+                margin: 0px 5px 0px 0px;
+                border: none;
+                border: 1px solid $color1;
                 position: relative;
                 background-color: transparent;
-                margin-top:30px;
-                height:48px;           
-            }
-            input[type="submit"]{
+                margin-top: 30px;
                 height: 48px;
-                width: 100%;
-                margin-top: 50px;
-                background-color: $color2;
-                border-radius: 5px;
-                color: #fff;
-                padding: 14px 0;
-                margin-top:25px;
-                border:none;
-                max-width:300px;
-                transition: 0.5s;
-                &:hover{
-                    background-color: $color1;
-                }
             }
         }
     }
