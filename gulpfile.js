@@ -35,6 +35,10 @@ function addThemeCss() {
   return src(['src/theme-overrides.css']).pipe(dest(config.dest.scss));
 }
 
+function buildTheme() {
+  return src(['src/fields.json', 'src/theme.json']).pipe(dest(config.dest.theme));
+}
+
 function buildModules() {
   return src(['src/modules/**/*', '!src/modules/**/fields/*']).pipe(dest(config.dest.modules));
 }
@@ -43,8 +47,13 @@ function buildTemplates() {
   return src(['src/templates/**/*', '!src/templates/**/fields/*']).pipe(dest(config.dest.templates));
 }
 
+<<<<<<< HEAD
 const buildCss = series(buildScss, addThemeCss);
 const _buildModules = series(buildModules);
+=======
+const Build = series(buildScss, addThemeCss, buildModules, buildTemplates, buildTheme);
+
+>>>>>>> f1ac2179fb732cd236607909758e5de5010ae3df
 
 
 const Watch = function () {

@@ -4,17 +4,18 @@
   label: Boilerplate - email subscription preferences
   screenshotPath: ../../images/template-previews/subscription-preferences.png
 -->
-{% set template_css = "../../css/templates/system.css" %}
 {% extends "../layouts/base.html" %}
 {# pageTitle is used on system templates for setting a value for the title tag #}
 {% set pageTitle = "Subscription preferences" %}
 
 {% block body %}
-<section class="content-wrapper">
-  <div class="systems-page">
+<section class="subscription-preferences">
+  <div class="container">
     {% module "subscription_preferences"
-      path="@hubspot/email_subscriptions"
+    path="@hubspot/email_subscriptions"
     %}
   </div>
 </section>
+
+<script src="/hs/hsstatic/SubscriptionPreferences/static-1.1/subscription_preferences_asset.js"></script>
 {% endblock body %}

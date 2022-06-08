@@ -1,19 +1,24 @@
 /**
  * Settings
  */
-@import "settings/*";
+@import 'settings/*';
 
 /**
- * Partials
+ * Components
  */
-@import "blog/*";
+@import 'components/*';
+
+/**
+ * Blog
+ */
+@import 'blog/*';
 
 /**
  * Modules
  */
-@import "modules/*";
+@import 'modules/*';
 
 /**
  * System
  */
-@import "system/*";
+@import 'system/*';

@@ -1,0 +1,85 @@
+<!--
+  templateType: blog
+  isAvailableForNewContent: true
+  label: Boilerplate V3 - Blog Listing
+-->
+
+<!-- End of HubSpot code snippet -->
+{% extends "../layouts/base-blog.html" %}
+{% block body %}
+{# {% module "module_16181303503753" path="/padok/modules/header", label="header" %} #}
+<div class="blog-listing-template">
+    {% if blog_author %}
+    {# Author Block Listing - You can manage it here #}
+    {% elif tag %}
+    {# Tag Listing - You can manage it here #}
+    {% else %}
+    <!--Classic Listing - You can manage it here -->
+    {% for post in contents %}
+    <h1>{{post.name}}</h1>
+    {% endfor %}
+    {% endif %}
+    <!-- Pagination -->
+    {% if contents.total_page_count > 1 %}
+    <nav class="container-blog-pagination">
+        {% set page_list = [-9 ,-8, -7, -6 ,-5, -4, -3 ,-2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14,
+        15,
+        16] %}
+        {% if contents.total_page_count - current_page_num == 1 %}{% set offset = -1 %}
+        {% elif contents.total_page_count - current_page_num == 0 %}{% set offset = -2 %}
+        {% elif current_page_num == 2 %}{% set offset = 1 %}
+        {% elif current_page_num == 1 %}{% set offset = 2 %}
+        {% else %}{% set offset = 0 %}{% endif %}
+
+        {% if current_page_num > 1 %} <a class="arrow previous" href="{{ blog_page_link(last_page_num) }}">
+            <svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M6.27881 1.09539C6.0303 0.856224 5.62737 0.856224 5.37886 1.09539L0.287889 5.99455C0.0394535 6.2337 0.0394535 6.62144 0.287889 6.8606L5.37886 11.7598C5.62737 11.9989 6.0303 11.9989 6.27881 11.7598C6.52733 11.5206 6.52733 11.1328 6.27881 10.8936L2.27423 7.03997H13.4652C13.8166 7.03997 14.1016 6.76579 14.1016 6.42757C14.1016 6.08936 13.8166 5.81518 13.4652 5.81518H2.27423L6.27881 1.96144C6.52733 1.72229 6.52733 1.33454 6.27881 1.09539Z"
+                    fill="black" />
+            </svg>
+        </a>
+        {% endif %}
+        <div class="blog-pagination">
+            {% for page in page_list %}
+            {% set this_page = current_page_num + page + offset %}
+            {% if this_page == 1 %}
+            <a class="blog-pagination__link {{ " blog-pagination__link--active" if this_page==current_page_num }}"
+                href="{{ blog_page_link(this_page) }}">{{ this_page }}</a>
+            {% endif %}
+            {% endfor %}
+            {% if current_page_num > 2 %} <p>...</p>
+            {% endif %}
+            {% for page in page_list %}
+            {% set this_page = current_page_num + page + offset %}
+            {% if this_page > 1 %}
+            {% if this_page >= contents.total_page_count %} {% else %} <a class="blog-pagination__link {{ "
+                blog-pagination__link--active" if this_page==current_page_num }}"
+                href="{{ blog_page_link(this_page) }}">{{ this_page }}</a>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+            {% if current_page_num < contents.total_page_count - 3 %} <p>...</p>
+                {% endif %}
+                {% for page in page_list %}
+                {% set this_page = current_page_num + page + offset %}
+                {% if this_page ==
+                contents.total_page_count %}
+                <a class="blog-pagination__link {{ " blog-pagination__link--active" if this_page==current_page_num }}"
+                    href="{{ blog_page_link(this_page) }}">{{ this_page }}</a>
+                {% endif %}
+                {% endfor %}
+        </div>
+        {% if current_page_num < contents.total_page_count %}<a class="arrow next {{ "
+            blog-pagination__next-link--disabled" if !next_page_num }}"
+            href="{{ blog_page_link(current_page_num + 1) }}">
+            <svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7.92627 1.09539C8.17478 0.856224 8.5777 0.856224 8.82622 1.09539L13.9172 5.99455C14.1656 6.2337 14.1656 6.62144 13.9172 6.8606L8.82622 11.7598C8.5777 11.9989 8.17478 11.9989 7.92627 11.7598C7.67774 11.5206 7.67774 11.1328 7.92627 10.8936L11.9308 7.03997H0.739879C0.388428 7.03997 0.103516 6.76579 0.103516 6.42757C0.103516 6.08936 0.388428 5.81518 0.739879 5.81518H11.9308L7.92627 1.96144C7.67774 1.72229 7.67774 1.33454 7.92627 1.09539Z"
+                    fill="black" />
+            </svg>
+            </a>
+            {% endif %}
+    </nav>
+    {% endif %}
+</div>
+{% endblock body %}

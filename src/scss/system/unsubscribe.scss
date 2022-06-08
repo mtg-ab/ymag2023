@@ -1,0 +1,42 @@
+section.unsubscribe {
+    padding: 250px 0px;
+    position: relative;
+    text-align: center;
+
+    div.container {
+        position: relative;
+        z-index: 2;
+
+        h1 {
+            color: $color1;
+        }
+
+        a.btn {
+            margin-top: 30px;
+        }
+
+        form {
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            width: 800px;
+            max-width: 100%;
+
+            div.item,
+            div.subscribe-options {
+                margin-top: 20px;
+            }
+
+            input[type="email"] {
+                appearance: none;
+                margin: 0px 5px 0px 0px;
+                border: none;
+                border: 1px solid $color1;
+                position: relative;
+                background-color: transparent;
+                margin-top: 30px;
+                height: 48px;
+            }
+        }
+    }
+}

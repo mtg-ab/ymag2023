@@ -1,6 +1,7 @@
-const path = require('path');
+const path = require('path')
 var glob = require("glob");
 const WebpackShellPluginNext = require('webpack-shell-plugin-next');
+const webpack = require('webpack');
 module.exports = {
   mode: 'production',
   entry: {
@@ -9,7 +10,6 @@ module.exports = {
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist/js')
-    //filename: '[name]/dist/[name].bundle.js', // Hacky way to force webpack   to have multiple output folders vs multiple files per one path
   },
   plugins: [
     new WebpackShellPluginNext({
@@ -18,6 +18,11 @@ module.exports = {
         blocking: true,
         parallel: false
       }
+    }),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      "window.jQuery": "jquery"
     })
   ],
   module: {

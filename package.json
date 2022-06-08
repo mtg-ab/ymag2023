@@ -6,8 +6,8 @@
   "author": "Marin",
   "license": "MIT",
   "env": {
-    "dev": "mtg-dev-antoine",
-    "prod": "mtg-dev-antoine"
+    "dev": "mtg-dev-marin",
+    "prod": "mtg-dev-marin"
   },
   "scripts": {
     "clean:dist": "rm -rf dist && mkdir dist ",
@@ -15,12 +15,12 @@
     "build:webpack": "webpack",
     "build:gulp": "gulp build",
     "deploy-dev:css": "hs upload --overwrite --portal=$npm_package_env_dev dist/css/main.css boilerplate-mtg-hubspot/css/main.css",
-    "deploy-prod:css": "hs upload --overwrite --portal=$npm_package_env_prod dist/css/main.css boilerplate-mtg-hubspot/css/main.css",
+    "deploy-prod:css": "hs upload --overwrite --portal=$npm_package_env_dev dist/css/main.css boilerplate-mtg-hubspot/css/main.css",
     "watch": "gulp watch",
     "watch:webpack": "webpack --watch --progress",
     "hs:auth": "hs auth personalaccesskey",
     "hs:sync-prod": "hs upload --overwrite --portal=$npm_package_env_dev dist boilerplate-mtg-hubspot",
-    "hs:sync-dev": "hs upload --overwrite --portal=$npm_package_env_prod dist boilerplate-mtg-hubspot",
+    "hs:sync-dev": "hs upload --overwrite --portal=$npm_package_env_dev dist boilerplate-mtg-hubspot",
     "hs:module": "yarn plop;",
     "hs:watch": "hs watch --portal=$npm_package_env_dev dist MTG",
     "deploy:prod": "yarn build && yarn hs:sync-prod",
@@ -78,15 +78,8 @@
     "webpack-cli": "^3.3.6"
   },
   "dependencies": {
-    "bootstrap": "^4.4.1",
     "flickity": "^2.2.1",
-    "flickity-fullscreen": "^1.1.1",
     "flickity-imagesloaded": "^2.0.0",
-    "infinite-scroll": "^3.0.6",
-    "isotope-layout": "^3.0.6",
-    "n": "^8.0.2",
-    "popper.js": "^1.16.1",
-    "sticky-js": "^1.2.2",
-    "vanilla-lazyload": "^14.0.0"
+    "n": "^8.0.2"
   }
 }
