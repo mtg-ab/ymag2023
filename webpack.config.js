@@ -1,5 +1,6 @@
 const path = require('path')
 var glob = require("glob");
+const WebpackShellPluginNext = require('webpack-shell-plugin-next');
 const webpack = require('webpack');
 module.exports = {
   mode: 'production',
@@ -11,6 +12,13 @@ module.exports = {
     path: path.resolve(__dirname, 'dist/js')
   },
   plugins: [
+    new WebpackShellPluginNext({
+      onDoneWatch: {
+        scripts: ['yarn deploy-dev:js'],
+        blocking: true,
+        parallel: false
+      }
+    }),
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery",
@@ -30,5 +38,6 @@ module.exports = {
         }
       },
     ]
-  }
+  },
+
 }
