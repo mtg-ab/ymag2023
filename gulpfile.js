@@ -6,6 +6,7 @@ const cssnano = require('cssnano');
 const postcssPresetEnv = require('postcss-preset-env');
 const postcssObjectFitImages = require('postcss-object-fit-images');
 const config = require('./gulpconfig.js');
+var exec = require('gulp-exec');
 
 function buildScss() {
   const postcssPlugins = [
@@ -22,8 +23,13 @@ function buildScss() {
     .pipe(plugins.sass())
     .pipe(plugins.postcss(postcssPlugins))
     .pipe(dest(config.dest.scss))
+    .pipe(exec('yarn deploy-dev:css'))
+
 }
 
+function buildTheme() {
+  return src(['src/fields.json', 'src/theme.json']).pipe(dest(config.dest.theme));
+}
 
 function addThemeCss() {
   return src(['src/theme-overrides.css']).pipe(dest(config.dest.scss));
@@ -37,13 +43,15 @@ function buildTemplates() {
   return src(['src/templates/**/*', '!src/templates/**/fields/*']).pipe(dest(config.dest.templates));
 }
 
-const Build = series(buildScss, addThemeCss, buildModules, buildTemplates);
-
+const buildCss = series(buildScss, addThemeCss);
+const _buildModules = series(buildModules);
 
 
 const Watch = function () {
-  watch(['src/**/*.scss'], Build);
+  watch(['src/**/*.scss'], buildCss);
 };
 
 exports.watch = Watch;
-exports.build = Build;
+exports.buildCss = buildCss;
+exports.buildModules = _buildModules;
+

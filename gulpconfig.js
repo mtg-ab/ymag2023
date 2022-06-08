@@ -3,7 +3,7 @@
  */
 
 const config = {
-  project: 'make-the-gradew',
+  project: 'make-the-grade',
   dest: {
     scss: 'dist/css',
     theme: 'dist/',
