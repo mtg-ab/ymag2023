@@ -1,63 +1,85 @@
-# About
-
-This is a starter pack for developing Hubspot projects. The project structure is:
-
-- /src folder for all your source files
-- /dist folder that is synced with Hubspot.
-
-## Features
-
-- Gulp
-- SCSS
-- Macro utils already integrated
-- Prettier & ESLint
-- Webpack (ES6)
-- Package Manager (Yarn & Npm)
-- Generate Module & Template with CLI
-- Icon SVG Module
-
-## Enhancement
-
-- SASS for Theme CSS : https://gist.github.com/levinkeo/e233963bdfc0933a4f75b9fdcb591410
-- Prettier for Hubl & Html
-
-## Plugin Installed
-
-- jQuery : https://jquery.com/
-- Boostrap : https://getbootstrap.com/
-- Flickify : https://github.com/metafizzy/flickity
-- Lazy Load : https://github.com/verlok/lazyload
-- Sticky : https://github.com/rgalus/sticky-js
-- Isotope : https://github.com/metafizzy/isotope
-- Infinite Scroll : https://github.com/metafizzy/infinite-scroll
-
-Thoses plugins can be updated realy easilly by using packages manager.
-Just remove them in the package.json and run `yarn`.
-To install them, just run `yarn add + plugin-name`
-Comment or uncomment them in main.js :)
-
-# Getting Started
+# Lancement d'un projet
 
 # Important 
 
-## Install Dependencies
+## Installer les dépendances de developpement
+
+- Installer Visual Studio Code: https://code.visualstudio.com/
 
 - Installer Homebrew : https://brew.sh/index_fr
 - Installer Git : brew install git
-- Install Java.
-- Install Yarn : brew install yarn
-- Install Node.js, a Javascript runtime environment that enables the local tools : brew install node
-- Install the gulp-cli globally: yarn global add grunt-cli
-- Install Visual Studio Code: https://code.visualstudio.com/
-- Install Hubl Extension: https://marketplace.visualstudio.com/items?itemName=WilliamSpiro.hubl
+- Installer Yarn : brew install yarn
+- Installer Node.js, a Javascript runtime environment that enables the local tools : brew install node
+- Installer the gulp-cli globally: yarn global add grunt-cli
+- Installer Hubl Extension: https://marketplace.visualstudio.com/items?itemName=WilliamSpiro.hubl
 
-## Install all project dependencies
+## Créer le projet client dans Gitlab
 
-Run in the project root:
+- Créer un nouveau projet dans l'organisation Make The Grade
+- Atribuer un nom au projet
+- Laisser toutes les options cochées par defaut
+
+## Importer le boilerplate (vous êtes ici)
 
 ```bash
-yarn install
+git clone [url .git https du boilerplate]
 ```
+
+- Renommer le dossier
+- Synchroniser votre base de code avec le repository gitlab  
+
+```bash
+git remote set-url origin [url .git https du boilerplate]
+```
+
+- Dans l'administration du projet Gitlab, Settings > Repository > Protected Branches (expand) > Cliquer sur Unprotect de la branche main
+- Faites un premier commit "First commit"
+
+```bash
+git commit -m 'First commit'
+```
+
+- Déployer vos sources sur master
+
+```bash
+git push -uf -origin main 
+```
+
+
+
+## Installer toutes les dépendances du projet
+
+Lancer la commande à la racine du projet:
+
+```bash
+yarn
+```
+
+## Setup HubSpot
+
+# package.json
+
+- Modifier le name du projet 
+- Associer le portail de developpement
+
+    "hs:sync-dev": "yarn gen:fields; yarn build:icons; hs upload --overwrite --portal=[NOM DU PORTAIL DE DEV]  dist [NOM DU TEMPLATE DANS HUBSPOT]"
+
+- Associer le portail de production
+
+    "hs:sync-prod": "yarn gen:fields; yarn build:icons; hs upload --overwrite --portal=[NOM DU PORTAIL DE PROD]  dist [NOM DU TEMPLATE DANS HUBSPOT]",
+
+- S'authentifier sur le portail du client (PRODUCTION) en suivant la procédure officielle d'HubSpot 
+
+```bash
+yarn hs:auth
+```
+
+*Laissez-vous guider* - *Le nom du template doit être similaire au le nom utilisé dans le package.json*
+
+- Modifier le nom des templates
+  -- src/theme.json -> Mettre à jour le label
+  -- 
+
 
 # Working
 
@@ -507,3 +529,42 @@ When creating a pull request (or PR, as they are known by all the cool kids thes
 You can reference existing issues or other PR’s by typing ‘#’ followed by the issue number or any word from the issue title. A little pop-up should help with picking the right issue number.
 
 </details>
+
+
+# About
+
+This is a starter pack for developing Hubspot projects. The project structure is:
+
+- /src folder for all your source files
+- /dist folder that is synced with Hubspot.
+
+## Features
+
+- Gulp
+- SCSS
+- Macro utils already integrated
+- Prettier & ESLint
+- Webpack (ES6)
+- Package Manager (Yarn & Npm)
+- Generate Module & Template with CLI
+- Icon SVG Module
+
+## Enhancement
+
+- SASS for Theme CSS : https://gist.github.com/levinkeo/e233963bdfc0933a4f75b9fdcb591410
+- Prettier for Hubl & Html
+
+## Plugin Installed
+
+- jQuery : https://jquery.com/
+- Boostrap : https://getbootstrap.com/
+- Flickify : https://github.com/metafizzy/flickity
+- Lazy Load : https://github.com/verlok/lazyload
+- Sticky : https://github.com/rgalus/sticky-js
+- Isotope : https://github.com/metafizzy/isotope
+- Infinite Scroll : https://github.com/metafizzy/infinite-scroll
+
+Thoses plugins can be updated realy easilly by using packages manager.
+Just remove them in the package.json and run `yarn`.
+To install them, just run `yarn add + plugin-name`
+Comment or uncomment them in main.js :)
