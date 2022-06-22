@@ -68,7 +68,8 @@ yarn
 
     "hs:sync-prod": "yarn gen:fields; yarn build:icons; hs upload --overwrite --portal=[NOM DU PORTAIL DE PROD]  dist [NOM DU TEMPLATE DANS HUBSPOT]",
 
-- S'authentifier sur le portail du client (PRODUCTION) en suivant la procédure officielle d'HubSpot 
+- S'authentifier sur le portail du client (PRODUCTION) en suivant la procédure officielle d'HubSpot
+
 
 ```bash
 yarn hs:auth
@@ -77,9 +78,29 @@ yarn hs:auth
 *Laissez-vous guider* - *Le nom du template doit être similaire au le nom utilisé dans le package.json*
 
 - Modifier le nom des templates
-  -- src/theme.json -> Mettre à jour le label
-  -- 
+src/theme.json -> Mettre à jour le label
+src/templates -> Mettre à jour le nom blog-listing / blog-post + pages/multi-purpose.html + pages/landing-page.html  + system/*
+- Renommer tous les boilerplate -mtg -hubspot par le nom du projet 
 
+- Dans le fichier deploy-file.sh, modifier la ligne numéro la ligne en indiquant le nom de votre portail de dev et ainsi que le nom du projet 
+
+- Déployer une premiere fois pour s'assurer du bon paramétrage en executant la commande yarn deploy:dev | yarn deploy:prod
+
+- Se rendre sur le portail -> Créer une première page en selectionnant le thême précedemment renommer dans la base de code.
+
+
+- Pour développer en continu lancer la commande yarn start, cette commande permettra d'activer un watch sur le css et le js | pour activer le watch sur vods modules et vos templates lancer la commande 
+
+```bash
+watchman-wait . --max-events 0 -p 'src/modules/**/*.json' 'src/modules/**/*.html' | while read line; do ./deploy-file.sh $line; done
+```
+
+START DEV :
+- Réaliser le guide de style : function.scss //setup les variables
+
+GENERATORS
+
+Let's dev.
 
 # Working
 
