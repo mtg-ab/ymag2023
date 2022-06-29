@@ -1,4 +1,3 @@
-
 const { series, src, dest, watch } = require('gulp');
 const plugins = require('gulp-load-plugins')({ camelize: true });
 const autoprefixer = require('autoprefixer');
@@ -47,13 +46,11 @@ function buildTemplates() {
   return src(['src/templates/**/*', '!src/templates/**/fields/*']).pipe(dest(config.dest.templates));
 }
 
-<<<<<<< HEAD
-const buildCss = series(buildScss, addThemeCss);
+
+const buildCss = series(buildScss, addThemeCss,buildModules, buildTemplates, buildTheme);
 const _buildModules = series(buildModules);
-=======
 const Build = series(buildScss, addThemeCss, buildModules, buildTemplates, buildTheme);
 
->>>>>>> f1ac2179fb732cd236607909758e5de5010ae3df
 
 
 const Watch = function () {
