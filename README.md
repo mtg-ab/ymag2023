@@ -12,6 +12,9 @@
 - Installer Yarn : brew install yarn
 - Installer Node.js, a Javascript runtime environment that enables the local tools : brew install node
 - Installer the gulp-cli globally: yarn global add grunt-cli
+- Installer watchman
+	- `brew update`
+	- `brew install watchman`
 - Installer Hubl Extension: https://marketplace.visualstudio.com/items?itemName=WilliamSpiro.hubl
 
 ## Créer le projet client dans Gitlab
@@ -30,7 +33,7 @@ git clone [url .git https du boilerplate]
 - Synchroniser votre base de code avec le repository gitlab  
 
 ```bash
-git remote set-url origin [url .git https du boilerplate]
+git remote set-url origin [url .git https du nouveau repository]
 ```
 
 - Dans l'administration du projet Gitlab, Settings > Repository > Protected Branches (expand) > Cliquer sur Unprotect de la branche main
