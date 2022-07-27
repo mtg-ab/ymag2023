@@ -103,7 +103,7 @@ yarn hs:auth
 
 ** BE CAREFULL, THE KEY USED DURING THIS COMMAND MUST BE THE SAME AS THE ONE USED IN YOUR PACKAGE.JSON **
 
-Update all the naming
+### Update all the naming
 
 src/theme.json -> Update label
 src/templates -> Update blog-listing / blog-post + pages/multi-purpose.html + pages/landing-page.html  + system/*
