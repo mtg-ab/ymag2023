@@ -9,27 +9,13 @@ This is a starter pack for developing Hubspot projects. The project structure is
 
 - Gulp
 - SCSS
-- Macro utils already integrated
-- Prettier & ESLint
 - Webpack (ES6)
+- GSAP
 - Package Manager (Yarn & Npm)
 - Generate Module & Template with CLI
-- Icon SVG Module
 
-## Enhancement
-
-- SASS for Theme CSS : https://gist.github.com/levinkeo/e233963bdfc0933a4f75b9fdcb591410
-- Prettier for Hubl & Html
 
 ## Plugin Installed
-
-- jQuery : https://jquery.com/
-- Boostrap : https://getbootstrap.com/
-- Flickify : https://github.com/metafizzy/flickity
-- Lazy Load : https://github.com/verlok/lazyload
-- Sticky : https://github.com/rgalus/sticky-js
-- Isotope : https://github.com/metafizzy/isotope
-- Infinite Scroll : https://github.com/metafizzy/infinite-scroll
 
 Thoses plugins can be updated realy easilly by using packages manager.
 Just remove them in the package.json and run `yarn`.
@@ -48,8 +34,42 @@ Comment or uncomment them in main.js :)
 - Install Yarn : brew install yarn
 - Install Node.js, a Javascript runtime environment that enables the local tools : brew install node
 - Install the gulp-cli globally: yarn global add grunt-cli
+- Installer watchman
+  - brew install watchman
 - Install Visual Studio Code: https://code.visualstudio.com/
 - Install Hubl Extension: https://marketplace.visualstudio.com/items?itemName=WilliamSpiro.hubl
+
+
+## Create the client project in Gitlab
+- Create a new project in Make the Grade Group in Gitlab
+- Name it properly
+- Let all the default options checked
+
+## Import the boilerplate ( you are at this step )
+
+```
+git clone [url .git https du boilerplate]
+```
+
+- Rename the folder
+- Sync your code with your repo by using this command :
+
+```
+git remote set-url origin [url .git https du nouveau repository]
+```
+
+- In the project settings > repository > protected branches ( expand ) > Unprotect the "main" branch
+- Make your first commit
+
+```
+git commit -m 'Init project'
+```
+
+- Deploy your code on master branch 
+
+```
+git push -uf -origin main 
+```
 
 ## Install all project dependencies
 
@@ -59,255 +79,51 @@ Run in the project root:
 yarn install
 ```
 
-# Working
+## Setup Hubspot Configuration
 
-## About
+### Package.json
 
-This boilerplate handles the building and deploying of JavaScript, CSS and Hubspot modules. It uses Gulp and Webpack to create minified main.js and main.css files and 'builds' all files in the /dist folder. The dist folder is the only folder that is synced with Hubspot, so all files in the project root and in /src are for local development. There are a few default commands that can be used in the package.json. The main command you need to build and sync files with Hubspot is `yarn deploy`.
-
-## The MakeTheGrade Workflow
-
-### Setup Hubspot Configuration
-
-The CMS CLI makes it easy to interact with multiple HubSpot CMS accounts.
-Set the name of the entry for your sandbox to be along the lines of “DEV” or “SANDBOX” so it is clear this account is a development environment. Additionally, set the defaultPortal to be your sandbox account, so when you run commands using the CMS CLI, it will automatically interact with your sandbox, and reduce accidental production deploys.
-
-An example for a project called Make The Grade:
-
-````bash
-defaultPortal: mtg-lab-1
-portals:
-  - name: MAKETHEGRADE
-    portalId: 123
-    authType: personalaccesskey
-    personalAccessKey: >-
-      xxxxx-xxxxxx-xxxxxxx-xxxxxx-xxxxx-xxxxxxx-xxxxxxxx
-    auth:
-      tokenInfo:
-        accessToken: >-
-          xxxxx-xxxxxx-xxxxxxx-xxxxxx-xxxxx-xxxxxxx-xxxxxxxx
-        expiresAt: '2020-01-01T00:00:00.000Z'
-  - name: mtg-lab-1
-    portalId: ***
-    authType: personalaccesskey
-    personalAccessKey: >-
-      xxxxx-xxxxxx-xxxxxxx-xxxxxx-xxxxx-xxxxxxx-xxxxxxxx
-    auth:
-      tokenInfo:
-        accessToken: >-
-          xxxxx-xxxxxx-xxxxxxx-xxxxxx-xxxxx-xxxxxxx-xxxxxxxx
-        expiresAt: '2020-01-01T00:00:00.000Z'```
-````
-
-Now, when running commands in the CMS CLI, like hs upload, if you do not specify a portal, the files will be uploaded to your mtg-lab-1 account.
-
-If you already have a hubspot.config.yml ( meaning you already have used hubspot cli) you can just use this command to add a new portal : 
-
-```hs auth personnalaccesskey```
-
-Then, you must set a name of your portal and the cms api key ( to get it : https://app.hubspot.com/login/two-factor?loginRedirectUrl=https%3A%2F%2Fapp.hubspot.com%2Fshortlink%2Fpersonal-access-key)
-
-## Get Started for your new project
-
-#### Create the repository based on this boilerplate
-
-Then create a new empty directory for your project
-`mkdir projectname`
-
-Then copy the entire repository
-`git clone --mirror https://github.com/UnityDev/BoilerplateMTG.git projectname`
-
-Change the project name inside the gulpconfig.js. Install all dependencies in the project like so:
-`yarn`
-
-Adapt your command on your package.json related to your project :
+- Update the name of your project
+- Change your env portal
 
 ```
-  "scripts": {
-    "clean:dist": "rm -rf dist && mkdir dist ",
-    "build": "yarn clean:dist && yarn build:gulp && yarn build:webpack",
-    "build:webpack": "webpack",
-    "build:gulp": "gulp build",
-    "build:icons": "gulp build-icons",
-    "lint": "eslint \"**/*.{js,jsx}\"",
-    "watch": "gulp watch",
-    "watch:webpack": "webpack --watch --progress",
-    "gen:fields": "gulp generate-fields",
-    "gen:module": "yarn plop; yarn gen:fields",
-    "hs:auth": "hs auth personalaccesskey",
-    "hs:sync-prod": "yarn gen:fields; yarn build:icons; hs upload --overwrite --portal=prod  dist MTG-Boilerplate",
-    "hs:sync-dev": "yarn gen:fields; yarn build:icons; hs upload --overwrite --portal=mtg-lab-1  dist MTG-Boilerplate",
-    "hs:module": "hs create module",
-    "hs:watch": "hs watch --portal=mtg-lab-1 dist MTG-Boilerplate",
-    "deploy:prod": "yarn build && yarn hs:sync-prod",
-    "deploy:dev": "yarn build && yarn hs:sync-dev"
+  "env": {
+    "dev": "mtg-dev-antoine",
+    "prod": "mtg-dev-antoine"
   },
 ```
 
-For example you have to change your ```--portal=prod``` to your new project portal name. Globally, you will have to change ```hs:sync-prod```&& ```hs:sync-dev````
+For example you have to change your ```mtg-dev-antoine``` to your new project portal name.
 
-
-Now, you can use the following commands to kick start you development:
-
-- `yarn gen:module <name> src/modules` This command will generate a module.
-
-- `yarn watch` This command will watch for changes regarding to SCSS, macro's and modules. Each module and macro will be copied over to the dist folder; The dist folder is used to publish to HubSpot.
-
-- `yarn watch:webpack` This command will watch for changes regarding to JavaScript. The JavaScript will be transpiled and placed inside the dist folder;
-
-- `yarn hs:watch` This command will watch for file changes inside the dist folder. When triggered these files will be uploaded to the HubSpot portal.
-
-- `yarn deploy:dev` This command will deploy to your hubspot portal related to your dev environment all your files. (compilating before)
-
-- `yarn deploy:prod` This command will deploy to your hubspot portal related to your prod environment all your files. (compilating before)
-
-
-#### Check Gitbub Actions
-
-##### Deploy Action
-
-GitHub Actions allows you to run a workflow on any GitHub event. In your project root, you should have a file at .github/workflows/deploy.yml
-
-Our deploy workflow is going to occur on pushes to the master branch. Paste the following in your deploy.yml file:
+- Auth on your hubspot portal using the official documentation
 
 ```
-on:
-  push:
-    branches:
-    - master
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js
-      uses: actions/setup-node@v1
-      with:
-        node-version: 10.x
-    - name: Install NPM deps
-      run: |
-          npm install
-    - name: Generate hubspot.config.yml and deploy
-      env:
-        HUBSPOT_PORTAL_ID: ENTER_YOUR_ACCOUNT_ID
-        HUBSPOT_API_KEY: ${{ secrets.HubSpotApiKey }}
-      run: |
-        bin/generate-config.js
-        bin/deploy.sh
+yarn hs:auth
 ```
 
-Replace `ENTER_YOUR_ACCOUNT_ID` with your HubSpot account ID. If you need help finding your HubSpot account ID, see Manage multiple HubSpot accounts. \${{ secrets.HubSpotApiKey }} will add your API key secret as an environmental variable in the deploy process, without having to store your API key visibly in source control.
+** BE CAREFULL, THE KEY USED DURING THIS COMMAND MUST BE THE SAME AS THE ONE USED IN YOUR PACKAGE.JSON **
 
-##### Lint Action
+Update all the naming
 
-You should also have a lint.yml file in your workflows directory. Lint means that when you are going to perform an action (here a push on the directory) then we are going to analyze your source code in order to know if it respects the good practices.
+src/theme.json -> Update label
+src/templates -> Update blog-listing / blog-post + pages/multi-purpose.html + pages/landing-page.html  + system/*
+Rename all mtg-hubspot-boilerplate by the name of the project
 
-```
-on: [push]
+### Configure auto-deployment
 
-jobs:
-  lint:
-    runs-on: ubuntu-latest
+- In the deploy-file.sh file, modify the line number the line by indicating the name of your dev portal and the name of the project
+- Deploy a first time to make sure of the good parameter setting by executing the command yarn deploy:dev | yarn deploy:prod
+- Go to the portal -> Create a first page by selecting the theme previously renamed in the code base.
 
-    steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js
-      uses: actions/setup-node@v1
-      with:
-        node-version: 10.x
-    - name: Install NPM deps
-      run: |
-          npm install
-    - name: Lint
-      run: |
-          npm run eslint
-```
-
-#### Create a secret for your HubSpot account's API Key
-
-To ensure your HubSpot account’s API key is not visible and stored in source control, we will create a secret for it, that will be passed into the deploy script as an environmental variable. In your GitHub repository, navigate to Settings > Secrets and select “Add a new secret”. Name your new secret HubSpotApiKey, and then enter your HubSpot account’s API key as the value. You can get the API key for your account by navigating to Settings > Integrations > API key, selecting "Create key," and then copying the key. Select “Add secret” to save your secret.
-
-This key will be passed into ${{ secrets.HubSpotApiKey }} from your .github/workflows/deploy.yml file. If you name your secret something other than HubSpotApiKey, make sure to update the ${{ secrets.HubSpotApiKey }} variable with the secret name you set.
-
-#### Commit your new file
-
-If you have not already committed your new .github/workflows/deploy.yml file yo your master branch.
-
-#### (Optionnal) - Lock your project in the Design Manager
-
-<details>
-<summary>Click to expand ! </summary>
-Because the source of truth for your project now lives in GitHub, and master represents your live website, it is important to prevent edits made directly in the Design Manager. Changes to your live developer file system should only come through your deploy action. You can lock projects within the Design Manager by right-clicking on a folder and selecting “Lock folder” to prevent anyone from editing files in the Design Manager.
-
-</details>
-
-# Working
-Hubspot doesn't allow the upload of SVG files in Design Tools. That's why this boilerplate includes an Icons module. The src/modules/icons.module/module.html file contains a SVG of all icons in src/icons. Add the Icons module in the 'Header' section of every template. That way you can use icons like:
+To develop continuously, run the command yarn start, this command will activate a watch on the css and js | to activate the watch on your modules and templates run the command
 
 ```
-<svg>
-  <use href="#example" xlink:href="#example"></use>
-</svg>
+watchman-wait . --max-events 0 -p 'src/modules/**/*.json' 'src/modules/**/*.html' 'src/templates/**/*.json' 'src/templates/**/*.html' | while read line; do ./deploy-file.sh $line; done
 ```
 
-You can add your SVG icons to src/icons. Combining SVG and adding them to the Icons module is handled by Gulp.
+### SASS Management
 
-## Manage Themes
-
-### Theme field
-
-The fields.json file will control the available fields in the theme editor sidebar. ( root directory)
-Adding a new field to specify the H1 options :
-
-```
-
-// fields.json
-{
-    "type": "font",
-    "name": "h1_font",
-    "label": "Heading 1",
-    "load_external_fonts": true,
-    "default": {
-        "color": "#494A52",
-        "font": "Merriweather",
-        "font_set": "GOOGLE",
-        "variant": "700",
-        "size": {
-        "units": "px",
-        "value": 48
-        }
-    }
-},
-
-```
-
-### Reference the field in your css
-
-To access a value in a theme, use the “theme” object. For example, you would use {{ theme.typography.h1_font.font }} to access the font-family set in our H1 font field.
-
-All your theme changes should appear in the theme-overrides.css located in the src/ directory.
-This is the only place where you can't sass because the compiler doesn't support hubl variables.
-
-Here an example : 
-```
-h1 {
- 	font-size: {{ theme.typography.h1_font.size.value }}{{ theme.typography.h1_font.size.units }};
- 	font-style: {{ theme.typography.h1_font.styles|attr('font-style') }};
- 	font-weight: {{ theme.typography.h1_font.styles|attr('font-weight')  }};
- 	font-family: {{ theme.typography.h1_font.font }};
- 	color: {{ theme.typography.h1_font.color }};
- 	text-decoration: {{ theme.typography.h1_font.styles|attr('text-decoration') }};
-    line-height: 1.3;
-}
-
-```
-
-## Developing new templates
-
-To be continued... ( just create html file )
-
-note à moi même : ajouter un paragraphe sur les annotations
-
+- Start creating the style guide accorded to your project by updating function.scss
 
 ## Developing new modules
 
