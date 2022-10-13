@@ -1,7 +1,6 @@
 <section id="\{{module.module_identity}}"
     class="{% if module.content_style.section_type != 'none' %} section-\{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
     <div class="container">
-        test
         {% inline_rich_text field="rich_text" value="\{{ module.text }}" %}
         {% if module.image.src %}
         <figure>

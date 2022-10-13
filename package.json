@@ -6,15 +6,15 @@
   "author": "Marin",
   "license": "MIT",
   "env": {
-    "dev": "mtg-dev-antoine",
-    "prod": "mtg-dev-antoine"
+    "dev": "mtg-dev-marin",
+    "prod": "mtg-dev-marin"
   },
   "scripts": {
     "clean:dist": "rm -rf dist && mkdir dist ",
     "build": "yarn clean:dist && yarn build:css && yarn build:modules && yarn build:js",
     "build:js": "webpack",
     "build:css": "gulp buildCss",
-    "build:modules": "gulp buildModules",
+    "build:modules": "gulp buildhtml",
     "deploy-dev:css": "hs upload --overwrite --portal=$npm_package_env_dev dist/css/main.css boilerplate-mtg-hubspot/css/main.css",
     "deploy-prod:css": "hs upload --overwrite --portal=$npm_package_env_prod dist/css/main.css boilerplate-mtg-hubspot/css/main.css",
     "deploy-dev:js": "hs upload --overwrite --portal=$npm_package_env_dev dist/js/main.js boilerplate-mtg-hubspot/js/main.js",
@@ -23,8 +23,8 @@
     "watch:js": "webpack --watch",
     "start": "concurrently \"yarn watch:css\" \"yarn watch:js\"",
     "hs:auth": "hs auth personalaccesskey",
-    "hs:sync-prod": "hs upload --overwrite --portal=$npm_package_env_prod dist boilerplate-mtg-hubspot",
-    "hs:sync-dev": "hs upload --overwrite --portal=$npm_package_env_dev dist boilerplate-mtg-hubspot",
+    "hs:sync-prod": " hs upload --overwrite --portal=$npm_package_env_prod dist boilerplate-mtg-hubspot",
+    "hs:sync-dev": " hs upload --overwrite --portal=$npm_package_env_dev dist boilerplate-mtg-hubspot",
     "hs:module": "yarn plop;",
     "hs:watch-dev": "hs watch --portal=$npm_package_env_dev src/modules boilerplate-mtg-hubspot",
     "hs:watch-prod": "hs watch --portal=$npm_package_env_prod src/modules boilerplate-mtg-hubspot",
@@ -38,10 +38,10 @@
     "@hubspot/cms-cli": "^1.0.11",
     "autoprefixer": "9.7.3",
     "babel-loader": "^8.0.6",
+    "concurrently": "^7.3.0",
     "cssnano": "^4.1.10",
     "del": "^5.0.0",
     "eslint": "^6.6.0",
-    "concurrently": "^7.3.0",
     "eslint-config-prettier": "^6.5.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-plugin-compat": "^3.3.0",
@@ -89,6 +89,9 @@
   "dependencies": {
     "flickity": "^2.2.1",
     "flickity-imagesloaded": "^2.0.0",
-    "n": "^8.0.2"
+    "gsap": "npm:@gsap/business",
+    "jquery": "^3.6.1",
+    "n": "^8.0.2",
+    "swiper": "^8.3.2"
   }
 }

@@ -7,6 +7,9 @@ module.exports = {
   entry: {
     main: glob.sync("./src/js/**/*.js"),
   },
+  watchOptions: {
+    poll: 1000,
+  },
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist/js')
@@ -28,7 +31,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.m?js$/,
+        test: /\.js$|jsx/,
         exclude: /(node_modules)/,
         use: {
           loader: 'babel-loader',
@@ -37,6 +40,10 @@ module.exports = {
           }
         }
       },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      }
     ]
   },
 

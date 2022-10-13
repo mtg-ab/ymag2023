@@ -1,10 +1,14 @@
-const { series, src, dest, watch } = require('gulp');
+
 const plugins = require('gulp-load-plugins')({ camelize: true });
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const postcssPresetEnv = require('postcss-preset-env');
 const postcssObjectFitImages = require('postcss-object-fit-images');
 const config = require('./gulpconfig.js');
+const path = require('path');
+const fs = require('fs');
+const del = require('del');
+const { series, src, dest, watch } = require('gulp');
 var exec = require('gulp-exec');
 
 function buildScss() {
@@ -22,7 +26,7 @@ function buildScss() {
     .pipe(plugins.sass())
     .pipe(plugins.postcss(postcssPlugins))
     .pipe(dest(config.dest.scss))
-    .pipe(exec('yarn deploy-dev:css'))
+    .pipe(exec('yarn deploy-prod:css'))
 
 }
 
@@ -43,16 +47,13 @@ function buildTemplates() {
 }
 
 const buildCss = series(buildScss, addThemeCss);
-const _buildModules = series(buildModules);
+const buildhtml = series(buildModules, buildTemplates, buildTheme);
 const Build = series(buildScss, addThemeCss, buildModules, buildTemplates, buildTheme);
 
-
-
 const Watch = function () {
-  watch(['src/**/*.scss'], buildCss);
+  watch(['src/**/*.scss', 'src/**/*.html', 'src/**/*.js', '!src/modules/**/fields/fields.js'], Build);
 };
 
 exports.watch = Watch;
 exports.buildCss = buildCss;
-exports.buildModules = _buildModules;
-
+exports['buildhtml'] = buildhtml;

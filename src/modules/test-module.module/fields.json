@@ -68,7 +68,7 @@
     },
     {
         "name": "text",
-        "label": "Text",
+        "label": "Text pour Marin",
         "required": false,
         "locked": false,
         "validation_regex": "",
