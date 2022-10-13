@@ -115,7 +115,14 @@ Rename all mtg-hubspot-boilerplate by the name of the project
 - Deploy a first time to make sure of the good parameter setting by executing the command yarn deploy:dev | yarn deploy:prod
 - Go to the portal -> Create a first page by selecting the theme previously renamed in the code base.
 
-To develop continuously, run the command yarn start, this command will activate a watch on the css and js | to activate the watch on your modules and templates run the command
+
+To develop continuously, run the following command in a first terminal.  This command will activate a watch on css and javascript.
+
+```
+yarn start
+```
+
+To activate the watch on your modules and templates, execute the following command in a second terminal in parallel.
 
 ```
 watchman-wait . --max-events 0 -p 'src/modules/**/*.json' 'src/modules/**/*.html' 'src/templates/**/*.json' 'src/templates/**/*.html' | while read line; do ./deploy-file.sh $line; done
