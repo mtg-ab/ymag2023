@@ -59,16 +59,11 @@ git remote set-url origin [url .git https du nouveau repository]
 ```
 
 - In the project settings > repository > protected branches ( expand ) > Unprotect the "main" branch
-- Make your first commit
-
-```
-git commit -m 'Init project'
-```
 
 - Deploy your code on master branch 
 
 ```
-git push -uf -origin main 
+git push -uf -origin 
 ```
 
 ## Install all project dependencies
