@@ -63,7 +63,7 @@ git remote set-url origin [url .git https du nouveau repository]
 - Deploy your code on master branch 
 
 ```
-git push -uf -origin 
+git push -uf -origin main 
 ```
 
 ## Install all project dependencies
