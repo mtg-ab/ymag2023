@@ -87,11 +87,13 @@
     "webpack-shell-plugin-next": "^2.2.2"
   },
   "dependencies": {
+    "css-loader": "^6.7.3",
     "flickity": "^2.2.1",
     "flickity-imagesloaded": "^2.0.0",
     "gsap": "npm:@gsap/business",
     "jquery": "^3.6.1",
     "n": "^8.0.2",
+    "style-loader": "^3.3.1",
     "swiper": "^8.3.2"
   }
 }
