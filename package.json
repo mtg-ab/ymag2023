@@ -6,7 +6,7 @@
   "author": "Marin",
   "license": "MIT",
   "env": {
-    "dev": "mtg-dev-marin",
+    "dev": "mtg-dev-andrew",
     "prod": "mtg-dev-marin"
   },
   "scripts": {
