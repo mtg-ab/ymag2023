@@ -34,6 +34,35 @@ div.container {
   }
 }
 
+// PADDINGS
+.section-sm{
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.section-md{
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.section-lg{
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+
+.section-xl{
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.pt-0{
+  padding-top: unset;
+}
+
+.pb-0{
+  padding-bottom: unset;
+}
+
 // TITLES
 h1,
 .h1,
