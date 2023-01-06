@@ -1,11 +1,11 @@
 {
-  "label": "Test Marin - Website Development",
+  "label": "Boilerplate MTG",
   "author": {
     "name": "Boilerplate",
     "email": "support@makethegrade.fr",
     "url": "https://www.makethegrade.fr/"
   },
   "preview_path": "./templates/page/multi-purpose.html",
-  "screenshot_path": "./images/template-previews/multi-purpose.png",
+  "screenshot_path": "./images/theme-preview/boilerplate.png",
   "enable_domain_stylesheets": false
 }

@@ -46,14 +46,18 @@ function buildTemplates() {
   return src(['src/templates/**/*', '!src/templates/**/fields/*']).pipe(dest(config.dest.templates));
 }
 
+function buildImages() {
+  return src(['src/images/**/*', '!src/images/*']).pipe(dest(config.dest.images));
+}
+
 const buildCss = series(buildScss, addThemeCss);
-const buildhtml = series(buildModules, buildTemplates, buildTheme);
+const buildhtml = series(buildModules, buildTemplates, buildTheme, buildImages);
 const Build = series(buildScss, addThemeCss, buildModules, buildTemplates, buildTheme);
 
 const Watch = function () {
-  watch(['src/**/*.scss', 'src/**/*.html', 'src/**/*.js', '!src/modules/**/fields/fields.js'], Build);
+  watch(['src/**/*.scss', 'src/**/*.html'], Build);
 };
 
 exports.watch = Watch;
 exports.buildCss = buildCss;
-exports['buildhtml'] = buildhtml;
+exports.buildhtml = buildhtml;

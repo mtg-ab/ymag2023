@@ -16,7 +16,7 @@ module.exports = {
   },
   plugins: [
     new WebpackShellPluginNext({
-      onDoneWatch: {
+      onAfterDone: {
         scripts: ['yarn deploy-dev:js'],
         blocking: true,
         parallel: false

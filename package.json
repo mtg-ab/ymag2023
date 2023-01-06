@@ -6,15 +6,15 @@
   "author": "Marin",
   "license": "MIT",
   "env": {
-    "dev": "mtg-dev-andrew",
-    "prod": "mtg-dev-marin"
+    "dev": "mtg-dev-antoine",
+    "prod": "mtg-dev-antoine"
   },
   "scripts": {
     "clean:dist": "rm -rf dist && mkdir dist ",
-    "build": "yarn clean:dist && yarn build:css && yarn build:modules && yarn build:js",
+    "build": "yarn clean:dist && yarn build:css && yarn build:html && yarn build:js",
     "build:js": "webpack",
     "build:css": "gulp buildCss",
-    "build:modules": "gulp buildhtml",
+    "build:html": "gulp buildhtml",
     "deploy-dev:css": "hs upload --overwrite --portal=$npm_package_env_dev dist/css/main.css boilerplate-mtg-hubspot/css/main.css",
     "deploy-prod:css": "hs upload --overwrite --portal=$npm_package_env_prod dist/css/main.css boilerplate-mtg-hubspot/css/main.css",
     "deploy-dev:js": "hs upload --overwrite --portal=$npm_package_env_dev dist/js/main.js boilerplate-mtg-hubspot/js/main.js",
