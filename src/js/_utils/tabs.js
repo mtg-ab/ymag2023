@@ -12,20 +12,20 @@ export default class Tabs {
      * const tabs = new Tabs(
      *    document.querySelectorAll('.wrapper-tabs-top li p'),
      *   document.querySelectorAll('.wrapper-tabs-content .tab'),
-     *  0,
-     * {});
+     *  0, { hover: true});
      * 
      * */
-    constructor(tabs, tabContents, activeTab = 0, options = {}) {
+    constructor(tabs, tabContents, activeTab = 0, options = { hover: false}) {
         this.tabs = tabs;
         this.tabContents = tabContents;
         this.activeTab = activeTab || 0;
         if (activeTab > tabs.length - 1) {
             this.activeTab = 0;
         }
+        this.hover = options.hover || false;
         this.removeAllActiveClass();
         this.setActiveTab(this.activeTab);
-        this.init();
+        this._init();
     }
     /**
      * Removes the active class from all tabs and tab contents.
@@ -66,9 +66,10 @@ export default class Tabs {
     /**
      * Initializes the Tabs instance.
      * */
-    init() {
+    _init() {
+        const type = this.hover ? 'mouseenter' : 'click';
         this.tabs.forEach((tab, index) => {
-            tab.addEventListener('click', e => {
+            tab.addEventListener(type, e => {
                 e.preventDefault();
                 this.removeActiveClass(this.activeTab);
                 this.setActiveTab(index);
