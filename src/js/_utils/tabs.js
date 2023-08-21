@@ -18,6 +18,7 @@ export default class Tabs {
     constructor(tabs, tabContents, activeTab = 0, options = { hover: false}) {
         this.tabs = tabs;
         this.tabContents = tabContents;
+        this.contentDisplay = this.tabContents[0].style.display;
         this.activeTab = activeTab || 0;
         if (activeTab > tabs.length - 1) {
             this.activeTab = 0;
@@ -57,7 +58,7 @@ export default class Tabs {
         const self = this;
         this.removeActiveClass(this.activeTab);
         this.activeTab = index;
-        this.tabContents[index].style.display = "flex";
+        this.tabContents[index].style.display = this.contentDisplay;
         setTimeout(function () {
             self.tabs[index].classList.add('active');
             self.tabContents[index].classList.add('active');
