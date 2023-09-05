@@ -1,7 +1,9 @@
 
+const sass = require('gulp-sass')(require('sass'));
 const plugins = require('gulp-load-plugins')({ camelize: true });
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
+const postcss = require('gulp-postcss');
 const postcssPresetEnv = require('postcss-preset-env');
 const postcssObjectFitImages = require('postcss-object-fit-images');
 const config = require('./gulpconfig.js');
@@ -10,6 +12,8 @@ const fs = require('fs');
 const del = require('del');
 const { series, src, dest, watch } = require('gulp');
 var exec = require('gulp-exec');
+const sassGlob = require('gulp-sass-glob'); // Ajoutez cette ligne
+
 
 function buildScss() {
   const postcssPlugins = [
@@ -22,12 +26,11 @@ function buildScss() {
   ];
 
   return src(config.src.scss)
-    .pipe(plugins.sassGlobImport())
-    .pipe(plugins.sass())
-    .pipe(plugins.postcss(postcssPlugins))
+    .pipe(sassGlob()) // Utilisez gulp-sass-glob pour prendre en charge les wildcards
+    .pipe(sass().on('error', sass.logError))
+    .pipe(postcss(postcssPlugins))
     .pipe(dest(config.dest.scss))
-    .pipe(exec('yarn deploy-prod:css'))
-
+    .pipe(exec('yarn deploy-prod:css'));
 }
 
 function buildTheme() {
