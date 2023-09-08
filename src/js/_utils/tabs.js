@@ -69,12 +69,12 @@ export default class Tabs {
      * */
     _init() {
         const type = this.hover ? 'mouseenter' : 'click';
-        this.tabs.forEach((tab, index) => {
-            tab.addEventListener(type, e => {
+        for(let i = 0; i < this.tabs.length; i++) {
+            this.tabs[i].addEventListener(type, e => {
                 e.preventDefault();
                 this.removeActiveClass(this.activeTab);
-                this.setActiveTab(index);
+                this.setActiveTab(i);
             });
-        });
+        }
     }
 }
