@@ -4,9 +4,7 @@ export default class Drawers {
      * Creates a Drawers instance.
      * @param {NodeList} drawers - The list of drawer elements.
      * @param {NodeList} drawerContents - The list of content elements corresponding to the drawers.
-     * @param {number} activeDrawer - The index of the initially active drawer (default: -1, optional).
      * @param {object} options - Additional options for configuring the Drawers behavior (optional).
-     * Options:
      * - oneCanBeOpen: boolean - Whether or not only one drawer can be open at a time (default: false, optional).
      * - activeDrawer: number - The index of the initially active drawer (default: -1, optional).
      * 
@@ -20,9 +18,9 @@ export default class Drawers {
     constructor(drawers, drawerContents, options = { activeDrawer: -1, oneCanBeOpen: false }) {
         this.drawers = drawers;
         this.drawerContents = drawerContents;
-        this.activeDrawer = options.activeDrawer || -1;
+        this.activeDrawer = options.activeDrawer === undefined ? -1 : options.activeDrawer;
         // If the active drawer is greater than the number of drawers, set it to -1.
-        if (this.activeDrawer != -1 && this.activeDrawer > drawers.length - 1) {
+        if ((!this.activeDrawer || this.activeDrawer != -1) && this.activeDrawer > drawers.length - 1) {
             this.activeDrawer = -1;
         }
         this.oneCanBeOpen = options.oneCanBeOpen || false;
@@ -34,7 +32,7 @@ export default class Drawers {
     calculateDrawerContentHeight() {
         for (let i = 0; i < this.drawers.length; i++) {
             this.drawerContents[i].style.height = "auto";
-            this.drawerContents[i].setAttribute("data-height",this.drawerContents[i].offsetHeight);
+            this.drawerContents[i].setAttribute("data-height", this.drawerContents[i].offsetHeight);
             if (this.activeDrawer !== -1 && this.activeDrawer !== i) {
                 this.drawerContents[i].style.height = "0px";
             }
@@ -58,7 +56,7 @@ export default class Drawers {
     closeDrawer(index) {
         this.drawers[index].classList.remove('open');
         this.drawerContents[index].style.height = "0px";
-        this.activeDrawer = -1;
+        if (this.oneCanBeOpen) this.activeDrawer = -1;
     }
     /**
      * Closes all drawers.
@@ -76,8 +74,11 @@ export default class Drawers {
     _init() {
         const self = this;
         this.calculateDrawerContentHeight();
-        this.closeAllDrawers();
-        if (this.activeDrawer !== -1) {
+        for (let i = 0; i < this.drawers.length; i++) {
+            this.drawers[i].classList.remove('open');
+            this.drawerContents[i].style.height = "0px";
+        }
+        if (this.activeDrawer != -1) {
             this.openDrawer(this.activeDrawer);
         }
         for (let i = 0; i < this.drawers.length; i++) {
@@ -94,6 +95,13 @@ export default class Drawers {
         }
         window.addEventListener("resize", function () {
             self.calculateDrawerContentHeight();
+            for (let i = 0; i < self.drawers.length; i++) {
+                self.drawers[i].classList.remove('open');
+                self.drawerContents[i].style.height = "0px";
+            }
+            if (self.activeDrawer != -1) {
+                self.openDrawer(self.activeDrawer);
+            }
         });
     }
 }
