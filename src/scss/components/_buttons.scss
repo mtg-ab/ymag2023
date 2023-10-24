@@ -1,24 +1,129 @@
 .btn {
-    font-family: $font1;
-    color: white;
-    background-color: $color1;
-    cursor: pointer;
-    position: relative;
-    display: inline-block;
-    font-size: 14px;
-    line-height: 1.25;
-    font-weight: 600;
-    text-align: center;
-    white-space: normal;
-    vertical-align: middle;
-    padding: 14px 20px;
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    text-align: left;
     text-decoration: none;
-    user-select: none;
-    border-radius: 5px;
-    overflow: hidden;
-    transition: all 0.5s;
+    transition: all 300ms;
+    font-family: $font2;
+    cursor: pointer;
+    font-weight: 700;
 
-    &:hover {
-        background-color: $color2;
+    &.primary {
+        padding: 5px 5px 5px 20px;
+        box-shadow: 0px 14px 24px 0px rgba(39, 85, 159, 0.10);
+        border-radius: 8px;
+        background-color: $color1;
+        border: 2px solid $color1;
+        color: white;
+        font-size: 17px;
+        display: flex;
+        align-items: center;
+
+        &:after {
+            content: "";
+            display: inline-block;
+            width: 34px;
+            height: 42px;
+            border-radius: 4px;
+            margin-left: 20px;
+            background: #267CBB;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='12' viewBox='0 0 21 12' fill='none'%3E%3Cpath d='M14.0891 10.9998L19.0037 6.06621L14.1364 1' stroke='white' stroke-width='1.5'/%3E%3Cline x1='18.4888' y1='6.06097' x2='0.887543' y2='6.06097' stroke='white' stroke-width='1.5'/%3E%3C/svg%3E");
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+    
+        &:hover {
+            background-color: $color5;
+            color: $color1;
+
+            &:after {
+                background-color: $color1;
+            }
+        }
+    }
+
+    &.secondary {
+        font-size: 16px;
+        color: $text-color1;
+        position: relative;
+
+        span {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            overflow: hidden;
+
+            &:before {
+                content: "";
+                width: 42px;
+                height: 26px;
+                background-color: #C7E3C8;
+                border-radius: 8px;
+                margin-left: 10px;
+            }
+        }
+
+        &:before, &:after {
+            content: "";
+            display: block;
+            width: 42px;
+            height: 26px;
+            position: absolute;
+            right: 0;
+            z-index: 11;
+            background-image: url("data:image/svg+xml,%3Csvg width='22' height='12' viewBox='0 0 22 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 5.25C0.585786 5.25 0.25 5.58579 0.25 6C0.25 6.41421 0.585787 6.75 1 6.75L1 5.25ZM21.5303 6.53033C21.8232 6.23744 21.8232 5.76256 21.5303 5.46967L16.7574 0.696698C16.4645 0.403805 15.9896 0.403805 15.6967 0.696698C15.4038 0.989591 15.4038 1.46446 15.6967 1.75736L19.9393 6L15.6967 10.2426C15.4038 10.5355 15.4038 11.0104 15.6967 11.3033C15.9896 11.5962 16.4645 11.5962 16.7574 11.3033L21.5303 6.53033ZM1 6.75L21 6.75L21 5.25L1 5.25L1 6.75Z' fill='%23081A26'/%3E%3C/svg%3E%0A");
+            background-position: center center;
+            background-repeat: no-repeat;
+            transition: all 350ms;
+        }
+
+        &:after {
+            transform: translateX(-15px);
+            opacity: 0;
+            top: 0;
+        }
+
+        &:hover {
+            &:before {
+                transform: translateX(15px);
+                opacity: 0;
+            }
+
+            &:after {
+                transform: translateX(0px);
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.arrows {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+    z-index: 11;
+
+    .btn-arrow {
+        cursor: pointer;
+        border-radius: 50px;
+        background-color: $color3;
+        width: 60px;
+        height: 40px;
+        background-image: url("data:image/svg+xml,%3Csvg width='23' height='12' viewBox='0 0 23 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.5 5.26562C1.08579 5.26563 0.75 5.60141 0.75 6.01563C0.75 6.42984 1.08579 6.76563 1.5 6.76562L1.5 5.26562ZM22.0303 6.54595C22.3232 6.25306 22.3232 5.77819 22.0303 5.48529L17.2574 0.712323C16.9645 0.419429 16.4896 0.419429 16.1967 0.712323C15.9038 1.00522 15.9038 1.48009 16.1967 1.77298L20.4393 6.01562L16.1967 10.2583C15.9038 10.5512 15.9038 11.026 16.1967 11.3189C16.4896 11.6118 16.9645 11.6118 17.2574 11.3189L22.0303 6.54595ZM1.5 6.76562L21.5 6.76562L21.5 5.26562L1.5 5.26562L1.5 6.76562Z' fill='white'/%3E%3C/svg%3E%0A");
+        background-repeat: no-repeat;
+        background-position: center center;
+        transition: .2s;
+
+        &:hover {
+            background-color: $color4;
+        }
+    }
+
+    .btn-arrow-prev {
+        transform: scaleX(-1);
     }
 }

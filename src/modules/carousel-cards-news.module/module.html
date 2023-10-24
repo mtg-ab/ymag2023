@@ -1,0 +1,47 @@
+<section id="{{module.module_identity}}"
+class="carousel-cards-news {% if module.content_style.padding_choice == 'classic' %}{% if module.content_style.section_type != 'none' %} section-{{ module.content_style.section_type }}{% endif %}{% if module.content_style.padding_top == false %} pt-0{% endif %}{% if module.content_style.padding_bottom == false %} pb-0{% endif %}{% endif %}"
+{% if module.content_style.padding_choice == 'custom' %} style="padding-top: {{ module.content_style.custom_padding_top }}px; padding-bottom: {{ module.content_style.custom_padding_bottom }}px;"{% endif %}>
+    <div class="container">
+        <div class="h2">
+            {{ module.title }}
+        </div>
+        <div class="p-m">
+            {{module.paragraph}}
+        </div>
+        <div class="wrapper">
+            <div class="swiper-wrapper">
+                {% for item in module.cards_group%}
+                    <a href="" class="item swiper-slide">
+                        <figure class="content-img">
+                            <img loading="lazy"
+                        src="{{ item.image.src }}" alt="{{ item.image.alt }}" width="{{ item.image.width }}" height="{{ item.image.height }}"/>
+                        </figure>
+                        <div class="content">
+                            <div class="content-text">
+                                <div class="info">
+                                    <div class="label type">
+                                        {{ item.resource_type }}
+                                    </div>
+                                    <div class="label">
+                                        {{ item.date }}
+                                    </div>
+                                </div>
+                                <div class="h3">
+                                    {{ item.resource_title }}
+                                </div>
+                                <div class="p-m">
+                                    {{ item.resource_description }}
+                                </div>
+                            </div>
+                            <button class="btn secondary">En savoir plus <span id="arrow-btn"></span></button>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+            <div class="arrows">
+                <span class="btn-arrow btn-arrow-prev"></span>
+                <span class="btn-arrow btn-arrow-next"></span>
+            </div>
+        </div>
+    </div>
+</section>

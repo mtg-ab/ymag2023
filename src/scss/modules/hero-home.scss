@@ -1,0 +1,53 @@
+.hero-home{
+    background-color: $color5;
+    padding: 90px 0px 70px 0px;
+
+    .container {
+        width: 100%;
+
+        .wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: start;
+
+            .content-left {
+                width: 50%;
+                padding-right: 45px;
+
+                .h1 {
+                    margin-bottom: 15px;
+                }
+
+                .p-m {
+                    margin-bottom: 60px;
+                }
+            }
+            .img-right {
+                width: 50%;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: $size3) {
+        .container {
+
+            .wrapper {
+                gap: 60px;
+        
+                .content-left {
+                    width: 100%;
+                    padding-right: 0px;
+                }
+        
+                .img-right {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

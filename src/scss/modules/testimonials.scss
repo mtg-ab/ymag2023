@@ -1,0 +1,141 @@
+.testimonials {
+    padding: 90px 0px;
+
+    .container {
+        position: relative;
+        .h2 {
+            margin-bottom: 45px;
+            text-align: center;
+        }
+
+        .wrapper {
+            border-radius: 8px;
+            border: 1px solid #E8E8E8;
+            background: $color5;
+
+            .swiper-wrapper {
+                position: relative;
+
+                .item {
+                    display: flex;
+                    flex-direction: row;
+                    opacity: 0 !important;
+
+                    &.swiper-slide-active {
+                        opacity: 1 !important;
+                    }
+    
+                    .case-study {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        width: 30%;
+                        padding: 45px;
+                        object-fit: fill;
+                        min-height: 345px;
+    
+                        .content-text {
+                            figure {
+                                width: auto;
+                                max-height: 45px;
+                                margin-bottom: 45px;
+                            }
+        
+                            .key-number {
+                                font-family: $font2;
+                                font-size: 60px;
+                                font-weight: 700;
+                                line-height: 100%;
+                                color: $text-color1;
+                                margin-bottom: 15px;
+                            }
+                        }
+                    }
+    
+                    .item-testimonial {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        padding: 45px;
+                        border-left: 1px solid #E8E8E8;
+                        width: 70%;
+                        object-fit: fill;
+                        
+    
+                        .testi-content {
+                            margin-bottom: 45px;
+                        }
+    
+                        .author {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            gap: 30px;
+    
+                            .p-l {
+                                font-weight: 700;
+                            }
+    
+                            figure {
+                                width: 70px;
+                                height: 70px;
+    
+                                img {
+                                    width: 70px;
+                                    height: 70px;
+                                    object-fit: cover;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .arrows {
+                position: absolute;
+                right: 45px;
+                bottom: 45px;
+            }
+        }
+    }
+
+    @media screen and (max-width: $size3) {
+        .container {
+            .wrapper {
+                .swiper-wrapper {
+                    .item {
+                        flex-direction: column;
+
+                        .case-study, .item-testimonial {
+                            width: 100%;
+                            padding: 30px;
+                        }
+
+                        .case-study {
+                            justify-content: flex-start;
+                            gap: 30px;
+                        }
+
+                        .item-testimonial {
+                            border-top: 1px solid #E8E8E8;
+                            border-left: none;
+                            justify-content: flex-start;
+
+                            .testi-content {
+                                margin-bottom: 30px;
+                            }
+
+                            .author {
+                                margin-bottom: 75px;
+                            }
+                        }
+                    }
+                }
+
+                .arrows {
+                    bottom: 30px;
+                    left: 60px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,65 @@
+.listing-cards {
+    padding: 120px 0px;
+    background-color: $color5;
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        gap: 105px;
+
+        .content-left {
+            width: 30%;
+
+            .label {
+                margin-bottom: 15px;
+            }
+
+            .h2, .p-m {
+                margin-bottom: 30px;
+            }
+
+            .btn {
+                margin-bottom: 60px;
+            }
+        }
+
+        .content-right {
+            width: calc(70% - 105px);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+
+            .item {
+                border-radius: 8px;
+                border: 1px solid #E8E8E8;
+                background: #FFF;
+                padding: 20px 30px;
+                width: calc(100% / 2 - 15px);
+
+                img {
+                    margin-bottom: 20px;
+                }
+
+                .h3 {
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: $size3) {
+        .container {
+            flex-direction: column;
+            gap: 60px;
+
+            .content-left, .content-right {
+                width: 100%;
+            }
+
+            .content-right {
+                .item {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

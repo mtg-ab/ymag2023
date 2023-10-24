@@ -1,0 +1,64 @@
+<section id="{{module.module_identity}}"
+class=" testimonials{% if module.content_style.padding_choice == 'classic' %}{% if module.content_style.section_type != 'none' %} section-{{ module.content_style.section_type }}{% endif %}{% if module.content_style.padding_top == false %} pt-0{% endif %}{% if module.content_style.padding_bottom == false %} pb-0{% endif %}{% endif %}"
+{% if module.content_style.padding_choice == 'custom' %} style="padding-top: {{ module.content_style.custom_padding_top }}px; padding-bottom: {{ module.content_style.custom_padding_bottom }}px;"{% endif %}>
+    <div class="container">
+        <div class="h2">
+            {{ module.title }}
+        </div>
+        <div class="wrapper">
+            <div class="swiper-wrapper">
+                {% for item in module.testimonial_group %}
+                    <div class="item swiper-slide">
+                        <div class="case-study">
+                            <div class="content-text">
+                                <figure>
+                                    <img loading="lazy"
+                                    src="{{ item.logo_client.src }}" alt="{{ item.logo_client.alt }}" width="{{ item.logo_client.width }}" height="{{ item.logo_client.height }}"/>
+                                </figure>
+                                <div class="key-number">
+                                    {{ item.number }}
+                                </div>
+                                <div class="p-m">
+                                    {{ item.description }}
+                                </div>
+                            </div>
+                            {% if item.link_group.link_field.url.href && item.link_group.link_type == 'link' %}
+                                <a class="btn secondary {{module.link_group.link_style}}"
+                                    href="{% if item.link_group.link_field.url.type == 'EMAIL_ADDRESS' %}mailto:{% endif %}{{item.link_group.link_field.url.href}}"
+                                    {% if item.link_group.link_field.open_in_new_tab %}target="_blank" {% endif %} {% if
+                                        item.link_group.link_field.no_follow %}rel="nofollow" {% endif %}>
+                                    <span>{{item.link_group.link_text}}</span>
+                                </a>
+                            {% elif item.link_group.link_type == 'cta' %}
+                                {% cta "cta" label='Select a CTA', guid='{{item.link_group.cta_field}}' %}
+                            {% endif %}
+                        </div>
+                        <div class="item-testimonial">
+                            <div class="p-l testi-content">
+                                {{ item.testimonial_content }}
+                            </div>
+                            <div class="author">
+                                <figure>
+                                    <img loading="lazy"
+                                src="{{ item.img_author.src }}" alt="{{ item.img_author.alt }}" width="{{ item.img_author.width }}" height="{{ item.img_author.height }}"/>
+                                </figure>
+                                <div class="author-info">
+                                    <div class="p-l">
+                                        {{ item.author_name }}
+                                    </div>
+                                    <div class="p-m">
+                                        {{ item.author_job }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="arrows">
+                <span class="btn-arrow btn-arrow-prev"></span>
+                <span class="btn-arrow btn-arrow-next"></span>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,45 @@
+<section id="{{module.module_identity}}"
+class=" listing-cards{% if module.content_style.padding_choice == 'classic' %}{% if module.content_style.section_type != 'none' %} section-{{ module.content_style.section_type }}{% endif %}{% if module.content_style.padding_top == false %} pt-0{% endif %}{% if module.content_style.padding_bottom == false %} pb-0{% endif %}{% endif %}"
+{% if module.content_style.padding_choice == 'custom' %} style="padding-top: {{ module.content_style.custom_padding_top }}px; padding-bottom: {{ module.content_style.custom_padding_bottom }}px;"{% endif %}>
+    <div class="container">
+        <div class="content-left">
+            <div class="label">
+                {{ module.tag }}
+            </div>
+            <div class="h2">
+                {{ module.title }}
+            </div>
+            <div class="p-m">
+                {{ module.paragraph }}
+            </div>
+            {% if module.link_group.link_field.url.href && module.link_group.link_type == 'link' %}
+                <a class="btn primary{{module.link_group.link_style}}"
+                    href="{% if module.link_group.link_field.url.type == 'EMAIL_ADDRESS' %}mailto:{% endif %}{{module.link_group.link_field.url.href}}"
+                    {% if module.link_group.link_field.open_in_new_tab %}target="_blank" {% endif %} {% if
+                    module.link_group.link_field.no_follow %}rel="nofollow" {% endif %}>
+                    <span>{{module.link_group.link_text}}</span>
+                </a>
+                {% elif module.link_group.link_type == 'cta' %}
+                    {% cta "cta" label='Select a CTA', guid='{{module.link_group.cta_field}}' %}
+            {% endif %}
+            <figure>
+                <img loading="lazy"
+                    src="{{ module.image.src }}" alt="{{ module.image.alt }}" width="{{ module.image.width }}" height="{{ module.image.height }}"/>
+            </figure>
+        </div>
+        <div class="content-right">
+            {% for item in module.card_group%}
+                <div class="item">
+                    <img loading="lazy"
+                    src="{{ item.card_icon.src }}" alt="{{ item.card_icon.alt }}" width="{{ item.card_icon.width }}" height="{{ item.card_icon.height }}"/>
+                    <div class="h3">
+                        {{ item.card_title }}
+                    </div>
+                    <div class="p-s">
+                        {{ item.card_description }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,30 @@
+<section id="{{module.module_identity}}"
+class="hero-home {% if module.content_style.padding_choice == 'classic' %}{% if module.content_style.section_type != 'none' %} section-{{ module.content_style.section_type }}{% endif %}{% if module.content_style.padding_top == false %} pt-0{% endif %}{% if module.content_style.padding_bottom == false %} pb-0{% endif %}{% endif %}"
+{% if module.content_style.padding_choice == 'custom' %} style="padding-top: {{ module.content_style.custom_padding_top }}px; padding-bottom: {{ module.content_style.custom_padding_bottom }}px;"{% endif %}>
+    <div class="container">
+        <div class="wrapper">
+            <div class="content-left">
+                <h1 class="h1">
+                    {{module.title}}
+                </h1>
+                <div class="p-m">
+                    {{module.paragraph}}
+                </div>
+                {% if module.link_group.link_field.url.href && module.link_group.link_type == 'link' %}
+                    <a class="btn primary {{module.link_group.link_style}}"
+                        href="{% if module.link_group.link_field.url.type == 'EMAIL_ADDRESS' %}mailto:{% endif %}{{module.link_group.link_field.url.href}}"
+                        {% if module.link_group.link_field.open_in_new_tab %}target="_blank" {% endif %} {% if
+                        module.link_group.link_field.no_follow %}rel="nofollow" {% endif %}>
+                        <span>{{module.link_group.link_text}}</span>
+                    </a>
+                    {% elif module.link_group.link_type == 'cta' %}
+                        {% cta "cta" label='Select a CTA', guid='{{module.link_group.cta_field}}' %}
+                {% endif %}
+            </div>
+            <div class="img-right">
+                <img
+                    src="{{ module.image.src }}" alt="{{ module.image.alt }}" width="{{ module.image.width }}" height="{{ module.image.height }}"/>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,57 @@
+<section id="{{module.module_identity}}"
+class=" grid-links{% if module.content_style.padding_choice == 'classic' %}{% if module.content_style.section_type != 'none' %} section-{{ module.content_style.section_type }}{% endif %}{% if module.content_style.padding_top == false %} pt-0{% endif %}{% if module.content_style.padding_bottom == false %} pb-0{% endif %}{% endif %}"
+{% if module.content_style.padding_choice == 'custom' %} style="padding-top: {{ module.content_style.custom_padding_top }}px; padding-bottom: {{ module.content_style.custom_padding_bottom }}px;"{% endif %}>
+    <div class="container">
+        <div class="content-left">
+            <figure>
+                <img loading="lazy"
+                    src="{{ module.image.src }}" alt="{{ module.image.alt }}" width="{{ module.image.width }}" height="{{ module.image.height }}"/>
+            </figure>
+        </div>
+        <div class="content-right">
+            <div class="headline">
+                <div class="label">
+                    {{ module.tag }}
+                </div>
+                <div class="h2">
+                    {{ module.title }}
+                </div>
+                <div class="p-m">
+                    {{ module.paragraph}}
+                </div>
+            </div>
+
+            <div class="listing">
+                <div class="column-left">
+                    {% for item in module.content_group %}
+                        {% if loop.index is even %}
+                        <a href="" class="item">
+                            <div class="p-m subtitle">
+                                {{ item.sub_title }}
+                            </div>
+                            <div class="p-m description">
+                                {{ item.description }}
+                            </div>
+                        </a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="column-right">
+                    {% for item in module.content_group %}
+                        {% if loop.index is odd %}
+                            <a href="" class="item">
+                                <div class="p-m subtitle">
+                                    {{ item.sub_title }}
+                                </div>
+                                <div class="p-m description">
+                                    {{ item.description }}
+                                </div>
+                            </a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+  
